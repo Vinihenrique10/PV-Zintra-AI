@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #050505;
+  --color-primary: #3B82F6;
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  --color-glass-bg: rgba(255, 255, 255, 0.05);
+
+  --color-foreground: #fafafa;
+  --color-card: #0B0F19;
+  --color-card-foreground: #fafafa;
+  --color-popover: #050505;
+  --color-popover-foreground: #fafafa;
+  --color-primary-foreground: #fafafa;
+  --color-secondary: #27272a;
+  --color-secondary-foreground: #fafafa;
+  --color-muted: #27272a;
+  --color-muted-foreground: #a1a1aa;
+  --color-accent: #27272a;
+  --color-accent-foreground: #fafafa;
+  --color-destructive: #7f1d1d;
+  --color-destructive-foreground: #fafafa;
+  --color-border: #27272a;
+  --color-input: #27272a;
+  --color-ring: #3B82F6;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10;
+  }
+
+  .glass-card {
+    @apply bg-[#0B0F19]/80 backdrop-blur-xl border border-white/5;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
