@@ -16,7 +16,8 @@ const zintraPlans = [
         ],
         description: "Perfeito para começar sua jornada",
         buttonText: "Começar Agora",
-        href: "#",
+        monthlyHref: "https://lastlink.com/p/CE11D6DC9/checkout-payment",
+        yearlyHref: "https://lastlink.com/p/C8B567061/checkout-payment",
         isPopular: false,
     },
     {
@@ -32,7 +33,8 @@ const zintraPlans = [
         ],
         description: "Para quem quer resultados rápidos",
         buttonText: "Assinar Pro",
-        href: "#",
+        monthlyHref: "https://lastlink.com/p/C83636150/checkout-payment",
+        yearlyHref: "https://lastlink.com/p/CBCB6AF44/checkout-payment",
         isPopular: true,
     },
 ];

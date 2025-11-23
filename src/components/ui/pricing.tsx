@@ -19,7 +19,8 @@ interface PricingPlan {
     features: string[];
     description: string;
     buttonText: string;
-    href: string;
+    monthlyHref: string;
+    yearlyHref: string;
     isPopular: boolean;
 }
 
@@ -180,7 +181,7 @@ export function Pricing({
                             <hr className="w-full my-4" />
 
                             <a
-                                href={plan.href}
+                                href={isMonthly ? plan.monthlyHref : plan.yearlyHref}
                                 className={cn(
                                     buttonVariants({
                                         variant: "outline",
