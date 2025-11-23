@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import scannerMockup from '../assets/scanner-mockup.png';
 
 export const ScannerSection = () => {
     return (
@@ -20,58 +21,15 @@ export const ScannerSection = () => {
                 </motion.div>
 
                 {/* Scanner Visual */}
-                <div className="relative w-full max-w-md mx-auto aspect-[3/4] rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
-                    {/* Fake Camera View */}
-                    <div className="absolute inset-0 bg-gray-900">
-                        {/* Placeholder for camera feed - gradient */}
-                        <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black opacity-50" />
+                <div className="relative w-full max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
+                    <img
+                        src={scannerMockup}
+                        alt="Scanner de Alimentos Zintra AI"
+                        className="w-full h-auto"
+                    />
 
-                        {/* Scanning Overlay */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-64 h-64 border-2 border-primary/50 rounded-lg relative">
-                                <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary -mt-1 -ml-1" />
-                                <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary -mt-1 -mr-1" />
-                                <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary -mb-1 -ml-1" />
-                                <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary -mb-1 -mr-1" />
-
-                                {/* Scan Line */}
-                                <motion.div
-                                    animate={{ top: ['0%', '100%', '0%'] }}
-                                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                                    className="absolute left-0 right-0 h-0.5 bg-primary shadow-[0_0_20px_rgba(59,130,246,0.8)]"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Detected Tags */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.5 }}
-                            className="absolute top-1/3 left-1/2 translate-x-4 bg-black/60 backdrop-blur-md border border-primary/30 px-3 py-1 rounded-full flex items-center gap-2"
-                        >
-                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                            <span className="text-xs font-mono text-primary">Frango Grelhado (150g)</span>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.8 }}
-                            className="absolute bottom-1/3 right-1/3 bg-black/60 backdrop-blur-md border border-primary/30 px-3 py-1 rounded-full flex items-center gap-2"
-                        >
-                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                            <span className="text-xs font-mono text-primary">Salada (80g)</span>
-                        </motion.div>
-                    </div>
-
-                    {/* Camera UI */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                        <div className="flex justify-center">
-                            <div className="w-16 h-16 rounded-full border-4 border-white flex items-center justify-center">
-                                <div className="w-14 h-14 rounded-full bg-white" />
-                            </div>
-                        </div>
-                    </div>
+                    {/* Glow behind */}
+                    <div className="absolute -inset-4 bg-primary/20 blur-3xl -z-10 rounded-full opacity-50" />
                 </div>
             </div>
         </section>

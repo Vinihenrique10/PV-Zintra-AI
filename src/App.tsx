@@ -12,6 +12,8 @@ import { ComparisonTable } from './components/ComparisonTable';
 import { PricingBasic } from './components/PricingBasic';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
+import { SecondaryCTA } from './components/SecondaryCTA';
+import { MobileStickyBar } from './components/MobileStickyBar';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         {/* Feature B: AI Scanner */}
         <ScannerSection />
 
+        <SecondaryCTA text="Quero emagrecer comendo o que gosto" />
+
         {/* Feature C: Workout Plan */}
         <FeatureSection
           title="Treinos rápidos, onde você estiver."
@@ -39,6 +43,8 @@ function App() {
           image={<WorkoutVisual />}
           align="left"
         />
+
+        <SecondaryCTA text="Quero meu treino seguro e personalizado" />
 
         {/* Feature D: Dashboard */}
         <FeatureSection
@@ -49,11 +55,13 @@ function App() {
         />
 
         <Testimonials />
+        <SecondaryCTA text="Quero ter resultados como esses" variant="primary" />
         <ComparisonTable />
         <PricingBasic />
         <FAQ />
       </main>
       <Footer />
+      <MobileStickyBar />
     </Layout>
   );
 }

@@ -45,15 +45,10 @@ export const FeatureSection: React.FC<FeatureSectionProps> = ({
                         transition={{ duration: 0.8 }}
                         className="flex-1 w-full"
                     >
-                        <div className="relative w-full aspect-[4/5] md:aspect-square max-w-[500px] mx-auto">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl blur-2xl -z-10" />
-                            <div className="w-full h-full bg-[#0B0F19] border border-white/10 rounded-3xl overflow-hidden shadow-2xl relative group">
-                                {/* Inner Content (passed as prop) */}
-                                {image}
-
-                                {/* Glass Reflection */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent pointer-events-none" />
-                            </div>
+                        <div className="relative w-full aspect-[4/5] md:aspect-square max-w-[500px] mx-auto flex items-center justify-center">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
+                            {/* Inner Content (passed as prop) */}
+                            {image}
                         </div>
                     </motion.div>
                 </div>

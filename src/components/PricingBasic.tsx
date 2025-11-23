@@ -39,7 +39,7 @@ const zintraPlans = [
 
 export function PricingBasic() {
     return (
-        <div className="py-10">
+        <div id="pricing" className="py-10">
             <Pricing
                 plans={zintraPlans}
                 title="Invista em você."
