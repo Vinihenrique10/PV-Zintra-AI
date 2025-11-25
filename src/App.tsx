@@ -13,7 +13,7 @@ import { PricingBasic } from './components/PricingBasic';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { SecondaryCTA } from './components/SecondaryCTA';
-import { MobileStickyBar } from './components/MobileStickyBar';
+
 
 function App() {
   return (
@@ -24,12 +24,14 @@ function App() {
         <ProblemSection />
 
         {/* Feature A: Nutrition Plan */}
-        <FeatureSection
-          title="Coma o que gosta e emagreça."
-          description="Ninguém aguenta viver de salada. Nosso plano inclui arroz, feijão e o que você tiver em casa. O sistema de substituição permite trocar alimentos sem sair da dieta."
-          image={<MealPlanVisual />}
-          align="right"
-        />
+        <div id="features">
+          <FeatureSection
+            title="Coma o que gosta e emagreça."
+            description="Ninguém aguenta viver de salada. Nosso plano inclui arroz, feijão e o que você tiver em casa. O sistema de substituição permite trocar alimentos sem sair da dieta."
+            image={<MealPlanVisual />}
+            align="right"
+          />
+        </div>
 
         {/* Feature B: AI Scanner */}
         <ScannerSection />
@@ -54,14 +56,17 @@ function App() {
           align="right"
         />
 
-        <Testimonials />
+        <div id="testimonials">
+          <Testimonials />
+        </div>
         <SecondaryCTA text="Quero ter resultados como esses" variant="primary" />
         <ComparisonTable />
         <PricingBasic />
-        <FAQ />
+        <div id="faq">
+          <FAQ />
+        </div>
       </main>
       <Footer />
-      <MobileStickyBar />
     </Layout>
   );
 }

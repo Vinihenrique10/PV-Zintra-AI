@@ -16,48 +16,72 @@ export const Hero = () => {
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto max-w-6xl relative z-10 flex flex-col items-center text-center">
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-[1.1]"
-                >
-                    A precisão de um <span className="text-primary">Nutricionista</span> e a estratégia de um <span className="text-primary">Personal Trainer</span>. No seu bolso, 24h por dia.
-                </motion.h1>
+            <div className="container mx-auto max-w-6xl relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
+                {/* Text Content - Left on Desktop */}
+                <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
+                    >
+                        A precisão de um <span className="text-primary">Nutricionista</span> e a estratégia de um <span className="text-primary">Personal Trainer</span>. No seu bolso, 24h por dia.
+                    </motion.h1>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl"
-                >
-                    Pare de tentar adivinhar o que comer ou como treinar. O Zintra AI usa protocolos baseados em fisiologia real para criar o plano perfeito para o seu corpo, suas lesões e sua rotina.
-                </motion.p>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg"
+                    >
+                        Pare de tentar adivinhar o que comer ou como treinar. O Zintra AI usa protocolos baseados em fisiologia real para criar o plano perfeito para o seu corpo, suas lesões e sua rotina.
+                    </motion.p>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                >
-                    <Button size="lg" className="mb-20" onClick={scrollToPricing}>
-                        Quero Emagrecer com Saúde
-                    </Button>
-                </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    >
+                        <Button size="lg" className="mb-12 md:mb-0" onClick={scrollToPricing}>
+                            Quero Emagrecer com Saúde
+                        </Button>
+                    </motion.div>
+                </div>
 
-                {/* Floating Visual */}
+                {/* Floating Visual - Right on Desktop */}
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-                    className="relative w-full max-w-[320px] md:max-w-[500px] mx-auto"
+                    className="relative w-full max-w-[320px] md:max-w-[400px] lg:max-w-[500px]"
                 >
-                    <div className="animate-float relative z-10">
+                    <motion.div
+                        animate={{
+                            y: [0, -20, 0],
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="relative z-10"
+                    >
                         <HeroVisual />
 
                         {/* Glow behind phone */}
-                        <div className="absolute -inset-4 bg-primary/30 blur-3xl -z-10 rounded-full opacity-50" />
-                    </div>
+                        <motion.div
+                            animate={{
+                                opacity: [0.3, 0.6, 0.3],
+                                scale: [0.8, 1.1, 0.8]
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className="absolute -inset-4 bg-primary/30 blur-3xl -z-10 rounded-full"
+                        />
+                    </motion.div>
                 </motion.div>
             </div>
         </section>
