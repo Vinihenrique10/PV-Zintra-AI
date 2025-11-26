@@ -68,16 +68,17 @@ export const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <motion.button
+                    <motion.a
+                        href="https://app-zintraai.vercel.app/auth"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className={`hidden md:block px-6 py-2 rounded-full transition-colors text-sm font-medium ${isScrolled
-                                ? "bg-white text-black hover:bg-gray-200"
-                                : "border border-white/10 hover:bg-white/5"
+                            ? "bg-white text-black hover:bg-gray-200"
+                            : "border border-white/10 hover:bg-white/5"
                             }`}
                     >
                         Login
-                    </motion.button>
+                    </motion.a>
 
                     {/* Mobile Menu Toggle */}
                     <button
@@ -108,9 +109,12 @@ export const Navbar = () => {
                                     {link.name}
                                 </button>
                             ))}
-                            <button className="mt-8 px-8 py-3 rounded-full bg-white text-black font-bold text-lg">
+                            <a
+                                href="https://app-zintraai.vercel.app/auth"
+                                className="mt-8 px-8 py-3 rounded-full bg-white text-black font-bold text-lg"
+                            >
                                 Login
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
                 )}
