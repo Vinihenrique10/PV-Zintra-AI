@@ -1,4 +1,6 @@
 import { Layout } from './components/Layout';
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProblemSection } from './components/ProblemSection';
@@ -18,6 +20,8 @@ import { SecondaryCTA } from './components/SecondaryCTA';
 function App() {
   return (
     <Layout>
+      <SpeedInsights />
+      <Analytics />
       <Navbar />
       <main className="relative z-10">
         <Hero />
