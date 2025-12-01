@@ -19,13 +19,24 @@ export const Hero = () => {
             <div className="container mx-auto max-w-6xl relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20">
                 {/* Text Content - Left on Desktop */}
                 <div className="flex flex-col items-center md:items-start text-center md:text-left max-w-2xl">
-                    <motion.h1
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="mb-4"
+                    >
+                        <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide border border-primary/20">
+                            Zero genérico. 100% Você.
+                        </span>
+                    </motion.div>
+
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
                     >
-                        A precisão de um <span className="text-primary">Nutricionista</span> e a estratégia de um <span className="text-primary">Personal Trainer</span>. No seu bolso, 24h por dia.
+                        Pare de tentar se encaixar em planos feitos para <span className="text-primary">"todo mundo"</span>.
                     </motion.h1>
 
                     <motion.p
@@ -34,7 +45,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg"
                     >
-                        Pare de tentar adivinhar o que comer ou como treinar. O Zintra AI usa protocolos baseados em fisiologia real para criar o plano perfeito para o seu corpo, suas lesões e sua rotina.
+                        Tenha um protocolo de Nutrição e Treino desenhado exclusivamente para a sua biologia, sua rotina e seu objetivo — seja emagrecer, definir ou ganhar massa.
                     </motion.p>
 
                     <motion.div
@@ -43,7 +54,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     >
                         <Button size="lg" className="mb-12 md:mb-0" onClick={scrollToPricing}>
-                            Quero Emagrecer com Saúde
+                            Gerar Meu Plano Personalizado
                         </Button>
                     </motion.div>
                 </div>

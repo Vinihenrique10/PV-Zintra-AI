@@ -11,10 +11,13 @@ export const ProblemSection = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">
-                        Por que apps genéricos <span className="text-red-500">falham</span> com você?
+                        Por que dietas de internet <span className="text-red-500">falham</span> com você?
                     </h2>
+                    <p className="text-xl text-gray-400 leading-relaxed mb-6">
+                        Porque elas não conhecem você. Apps comuns e PDFs de internet tratam todo mundo como uma estatística. Eles ignoram que você tem dores no joelho, que odeia brócolis ou que seu metabolismo é diferente.
+                    </p>
                     <p className="text-xl text-gray-400 leading-relaxed">
-                        A maioria dos apps te trata como uma estatística. Eles ignoram que você tem dores no joelho, ignoram que você odeia brócolis ou que só tem 30 minutos para treinar. O Zintra não "chuta" números. Ele <span className="text-white font-semibold">calcula</span>.
+                        <span className="text-white font-semibold">A Solução Zintra:</span> Nós não "chutamos" números. Nossa Inteligência Artificial analisa dezenas de variáveis do seu perfil para criar o caminho mais curto e eficiente entre você e seu objetivo.
                     </p>
                 </motion.div>
             </div>

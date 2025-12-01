@@ -13,10 +13,10 @@ export const ScannerSection = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Vai comer fora? <span className="text-primary">A gente te ajuda.</span>
+                        Scanner IA: A <span className="text-primary">Liberdade</span> de Comer Fora
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Tire uma foto do seu prato e saiba se está exagerando. Controle as calorias de forma visual e simples, sem contas complicadas.
+                        Não fique refém da marmita. Aponte a câmera para qualquer prato e nossa IA diz se ele cabe no seu plano. Personalização é ter liberdade com controle.
                     </p>
                 </motion.div>
 

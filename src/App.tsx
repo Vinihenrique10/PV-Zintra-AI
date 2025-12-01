@@ -17,6 +17,10 @@ import { Footer } from './components/Footer';
 import { SecondaryCTA } from './components/SecondaryCTA';
 
 
+import { MechanismSection } from './components/MechanismSection';
+import { QualificationSection } from './components/QualificationSection';
+import { OfferSection } from './components/OfferSection';
+
 function App() {
   return (
     <Layout>
@@ -26,12 +30,13 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <ProblemSection />
+        <MechanismSection />
 
         {/* Feature A: Nutrition Plan */}
         <div id="features">
           <FeatureSection
-            title="Coma o que gosta e emagreça."
-            description="Ninguém aguenta viver de salada. Nosso plano inclui arroz, feijão e o que você tiver em casa. O sistema de substituição permite trocar alimentos sem sair da dieta."
+            title="Nutrição: O Cardápio que Funciona para VOCÊ"
+            description="Não existe 'dieta perfeita' universal. Existe a dieta que você consegue seguir. O app monta refeições com o que você gosta de comer. Quer trocar o jantar? O sistema recalcula os macros para manter seu objetivo intacto."
             image={<MealPlanVisual />}
             align="right"
           />
@@ -44,8 +49,8 @@ function App() {
 
         {/* Feature C: Workout Plan */}
         <FeatureSection
-          title="Treinos rápidos, onde você estiver."
-          description="Não gosta de academia? Treine em casa. Tem dor no joelho? O app remove exercícios perigosos. O treino se adapta a você, não o contrário."
+          title="Treino: Engenharia Corporal Individual"
+          description="Seu objetivo é hipertrofia? O treino foca em carga e volume. É emagrecimento? O foco muda. Segurança Total: O único app que pergunta 'Onde você sente dor?' e remove exercícios perigosos para sua articulação específica."
           image={<WorkoutVisual />}
           align="left"
         />
@@ -60,10 +65,14 @@ function App() {
           align="right"
         />
 
+        <QualificationSection />
+
         <div id="testimonials">
           <Testimonials />
         </div>
-        <SecondaryCTA text="Quero ter resultados como esses" variant="primary" />
+
+        <OfferSection />
+
         <ComparisonTable />
         <PricingBasic />
         <div id="faq">
