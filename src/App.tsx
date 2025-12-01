@@ -30,7 +30,9 @@ function App() {
       <main className="relative z-10">
         <Hero />
         <ProblemSection />
-        <MechanismSection />
+        <div id="how-it-works">
+          <MechanismSection />
+        </div>
 
         {/* Feature A: Nutrition Plan */}
         <div id="features">
@@ -65,7 +67,9 @@ function App() {
           align="right"
         />
 
-        <QualificationSection />
+        <div id="for-who">
+          <QualificationSection />
+        </div>
 
         <div id="testimonials">
           <Testimonials />
