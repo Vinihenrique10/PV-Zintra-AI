@@ -71,7 +71,7 @@ export const Navbar = () => {
 
                 <div className="flex items-center gap-4">
                     <motion.a
-                        href="https://app-zintraai.vercel.app/auth"
+                        href="https://app.zintraai.com/"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className={`hidden md:block px-6 py-2 rounded-full transition-colors text-sm font-medium ${isScrolled
@@ -112,7 +112,7 @@ export const Navbar = () => {
                                 </button>
                             ))}
                             <a
-                                href="https://app-zintraai.vercel.app/auth"
+                                href="https://app.zintraai.com/"
                                 className="mt-8 px-8 py-3 rounded-full bg-white text-black font-bold text-lg"
                             >
                                 Login

@@ -16,8 +16,8 @@ const zintraPlans = [
         ],
         description: "Perfect to start your journey",
         buttonText: "Start Now",
-        monthlyHref: "https://lastlink.com/p/CE11D6DC9/checkout-payment",
-        yearlyHref: "https://lastlink.com/p/C8B567061/checkout-payment",
+        monthlyHref: "https://buy.stripe.com/fZu28q8habYBdYgcXhbMQ00",
+        yearlyHref: "https://buy.stripe.com/fZu14m6929QtdYg2iDbMQ01",
         isPopular: false,
     },
     {
@@ -33,8 +33,8 @@ const zintraPlans = [
         ],
         description: "For those who want fast results",
         buttonText: "Subscribe Pro",
-        monthlyHref: "https://lastlink.com/p/C83636150/checkout-payment",
-        yearlyHref: "https://lastlink.com/p/CBCB6AF44/checkout-payment",
+        monthlyHref: "https://buy.stripe.com/fZu00ibtme6J3jC9L5bMQ02",
+        yearlyHref: "https://buy.stripe.com/8x228q8ha4w9g6o9L5bMQ03",
         isPopular: true,
     },
 ];
