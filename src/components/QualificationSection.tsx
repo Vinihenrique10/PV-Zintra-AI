@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
 const qualifications = [
-    "Quer emagrecer, mas não abre mão de comer comida gostosa.",
-    "Tem uma rotina corrida e pouco tempo para planejar refeições.",
-    "Tem medo de se lesionar com treinos genéricos de internet.",
-    "Já tentou de tudo e precisa de organização e constância."
+    "Want to lose weight, but won't give up eating delicious food.",
+    "Have a busy routine and little time to plan meals.",
+    "Are afraid of getting injured with generic internet workouts.",
+    "Have tried everything and need organization and consistency."
 ];
 
 export const QualificationSection = () => {
@@ -25,10 +25,10 @@ export const QualificationSection = () => {
 
                     <div className="text-center mb-12 relative z-10">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Para Quem é o <span className="text-primary">Zintra?</span>
+                            Who is <span className="text-primary">Zintra</span> For?
                         </h2>
                         <p className="text-xl text-gray-400">
-                            Este app foi feito para você se:
+                            This app was made for you if you:
                         </p>
                     </div>
 

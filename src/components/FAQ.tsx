@@ -4,20 +4,20 @@ import { clsx } from 'clsx';
 
 const faqs = [
     {
-        question: "Como recebo o acesso?",
-        answer: "O sistema cria seu usuário automaticamente após o pagamento e envia por e-mail. Você receberá o login e senha em menos de 2 minutos."
+        question: "How do I receive access?",
+        answer: "The system automatically creates your user after payment and sends it by email. You'll receive your login and password in less than 2 minutes."
     },
     {
-        question: "O plano alimentar considera minhas restrições?",
-        answer: "Sim. Durante o setup inicial, você pode marcar alergias (lactose, glúten, etc) e preferências (vegano, vegetariano). A IA nunca sugerirá algo que você não possa comer."
+        question: "Does the meal plan consider my restrictions?",
+        answer: "Yes. During the initial setup, you can mark allergies (lactose, gluten, etc.) and preferences (vegan, vegetarian). The AI will never suggest something you can't eat."
     },
     {
-        question: "Posso cancelar a qualquer momento?",
-        answer: "Sim. Não há fidelidade no plano mensal. Você pode cancelar direto pelo app em 'Configurações' sem precisar falar com ninguém."
+        question: "Can I cancel anytime?",
+        answer: "Yes. There's no commitment on the monthly plan. You can cancel directly through the app in 'Settings' without needing to talk to anyone."
     },
     {
-        question: "Serve para iniciantes?",
-        answer: "Com certeza. O Zintra ajusta o volume de treino e a complexidade dos exercícios baseando-se no seu nível de experiência."
+        question: "Is it suitable for beginners?",
+        answer: "Absolutely. Zintra adjusts the workout volume and exercise complexity based on your experience level."
     }
 ];
 
@@ -28,7 +28,7 @@ export const FAQ = () => {
         <section className="py-24 px-6 relative overflow-hidden">
             <div className="container mx-auto max-w-3xl relative z-10">
                 <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">
-                    Dúvidas Frequentes
+                    Frequently Asked Questions
                 </h2>
 
                 <div className="space-y-4">

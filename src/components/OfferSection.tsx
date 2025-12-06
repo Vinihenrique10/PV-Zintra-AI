@@ -19,14 +19,14 @@ export const OfferSection = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        A ciência do seu corpo, <span className="text-primary">decodificada</span>.
+                        Your body's science, <span className="text-primary">decoded</span>.
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-                        Não perca mais tempo com tentativas e erros. Comece hoje com o plano que foi feito sob medida para você.
+                        Don't waste more time with trial and error. Start today with a plan that was tailor-made for you.
                     </p>
 
                     <Button size="lg" onClick={scrollToPricing}>
-                        Começar Agora
+                        Start Now
                     </Button>
                 </motion.div>
             </div>

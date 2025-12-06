@@ -20,15 +20,15 @@ export const MobileStickyBar = () => {
         >
             <div className="bg-black/80 backdrop-blur-xl border-t border-white/10 p-4 flex items-center justify-between gap-4 rounded-t-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
                 <div className="flex flex-col">
-                    <span className="text-xs text-gray-400">Plano sob medida</span>
-                    <span className="text-sm font-bold text-white">a partir de R$ 59,90</span>
+                    <span className="text-xs text-gray-400">Tailor-made plan</span>
+                    <span className="text-sm font-bold text-white">starting at $19.90</span>
                 </div>
                 <Button
                     onClick={scrollToPricing}
                     size="sm"
                     className="bg-primary text-white hover:bg-primary/90 whitespace-nowrap"
                 >
-                    Ver Planos
+                    View Plans
                 </Button>
             </div>
         </motion.div>

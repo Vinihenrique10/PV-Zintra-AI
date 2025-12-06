@@ -4,18 +4,18 @@ import { User, Target, Zap } from 'lucide-react';
 const steps = [
     {
         icon: User,
-        title: "Entendemos quem você é",
-        description: "Não pedimos apenas peso e altura. Analisamos sua rotina, nível de estresse, experiência de treino e preferências alimentares."
+        title: "We Understand Who You Are",
+        description: "We don't just ask for weight and height. We analyze your routine, stress level, training experience, and food preferences."
     },
     {
         icon: Target,
-        title: "Definimos seu Objetivo",
-        description: "Quer secar 10kg? Quer ganhar massa muscular nas pernas? Quer apenas saúde? O algoritmo ajusta as calorias e a intensidade do treino para a sua meta específica."
+        title: "We Define Your Goal",
+        description: "Want to lose 20lbs? Want to build leg muscle? Just want better health? The algorithm adjusts calories and training intensity for your specific goal."
     },
     {
         icon: Zap,
-        title: "O Plano Ganha Vida",
-        description: "Geramos um protocolo único. Se você mudar de ideia ou de rotina, o plano muda com você."
+        title: "The Plan Comes to Life",
+        description: "We generate a unique protocol. If you change your mind or routine, the plan changes with you."
     }
 ];
 
@@ -31,10 +31,10 @@ export const MechanismSection = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Como Criamos o <span className="text-primary">Plano Perfeito</span>
+                        How We Create the <span className="text-primary">Perfect Plan</span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        O Zintra se adapta a QUALQUER objetivo.
+                        Zintra adapts to ANY goal.
                     </p>
                 </motion.div>
 

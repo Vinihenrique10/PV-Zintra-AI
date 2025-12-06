@@ -16,8 +16,8 @@ export const DashboardVisual = () => {
                 <div className="pt-12 px-5 pb-6">
                     <div className="flex justify-between items-center mb-6">
                         <div>
-                            <h3 className="text-white font-bold text-lg leading-tight">Minhas Metas</h3>
-                            <p className="text-green-400 text-sm font-medium">Foco: Emagrecimento</p>
+                            <h3 className="text-white font-bold text-lg leading-tight">My Goals</h3>
+                            <p className="text-green-400 text-sm font-medium">Focus: Weight Loss</p>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                             <div className="w-4 h-4 rounded-full bg-green-500" />
@@ -32,8 +32,8 @@ export const DashboardVisual = () => {
                     >
                         <div className="flex justify-between items-start mb-4">
                             <div>
-                                <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">Peso Atual</div>
-                                <div className="text-3xl font-bold text-white">72.4 <span className="text-sm text-gray-500 font-normal">kg</span></div>
+                                <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">Current Weight</div>
+                                <div className="text-3xl font-bold text-white">159.5 <span className="text-sm text-gray-500 font-normal">lbs</span></div>
                             </div>
                             <div className="flex items-center gap-1 text-green-400 text-xs font-medium bg-green-500/10 px-2 py-1 rounded-full">
                                 <TrendingUp className="w-3 h-3" />
@@ -55,8 +55,8 @@ export const DashboardVisual = () => {
                             ))}
                         </div>
                         <div className="flex justify-between mt-2 text-[10px] text-gray-500 font-mono">
-                            <span>Seg</span>
-                            <span>Dom</span>
+                            <span>Mon</span>
+                            <span>Sun</span>
                         </div>
                     </motion.div>
 
@@ -72,7 +72,7 @@ export const DashboardVisual = () => {
                                 <Flame className="w-4 h-4 fill-current" />
                             </div>
                             <div className="text-2xl font-bold text-white">12</div>
-                            <div className="text-xs text-gray-400">Dias Seguidos</div>
+                            <div className="text-xs text-gray-400">Day Streak</div>
                         </motion.div>
 
                         <motion.div
@@ -85,21 +85,21 @@ export const DashboardVisual = () => {
                                 <Target className="w-4 h-4" />
                             </div>
                             <div className="text-2xl font-bold text-white">85%</div>
-                            <div className="text-xs text-gray-400">Aderência</div>
+                            <div className="text-xs text-gray-400">Adherence</div>
                         </motion.div>
                     </div>
                 </div>
 
                 {/* Next Milestone */}
                 <div className="mt-auto px-5 pb-8">
-                    <div className="text-xs text-gray-400 mb-3 uppercase tracking-wider">Próxima Conquista</div>
+                    <div className="text-xs text-gray-400 mb-3 uppercase tracking-wider">Next Milestone</div>
                     <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-xl p-4 border border-white/10 flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-black shadow-lg shadow-orange-500/20">
                             <Trophy className="w-5 h-5 fill-current" />
                         </div>
                         <div>
-                            <div className="text-white font-bold text-sm">Perder 5kg</div>
-                            <div className="text-xs text-gray-400">Faltam 0.8kg</div>
+                            <div className="text-white font-bold text-sm">Lose 10lbs</div>
+                            <div className="text-xs text-gray-400">1.8lbs to go</div>
                         </div>
                         <ChevronRight className="w-5 h-5 text-gray-500 ml-auto" />
                     </div>

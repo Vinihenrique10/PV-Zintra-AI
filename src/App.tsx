@@ -37,8 +37,8 @@ function App() {
         {/* Feature A: Nutrition Plan */}
         <div id="features">
           <FeatureSection
-            title="Nutrição: O Cardápio que Funciona para VOCÊ"
-            description="Não existe 'dieta perfeita' universal. Existe a dieta que você consegue seguir. O app monta refeições com o que você gosta de comer. Quer trocar o jantar? O sistema recalcula os macros para manter seu objetivo intacto."
+            title="Nutrition: The Meal Plan that Works for YOU"
+            description="There's no universal 'perfect diet'. There's the diet you can actually follow. The app creates meals with foods you love. Want to swap dinner? The system recalculates macros to keep your goal intact."
             image={<MealPlanVisual />}
             align="right"
           />
@@ -47,22 +47,22 @@ function App() {
         {/* Feature B: AI Scanner */}
         <ScannerSection />
 
-        <SecondaryCTA text="Quero emagrecer comendo o que gosto" />
+        <SecondaryCTA text="I want to lose weight eating what I love" />
 
         {/* Feature C: Workout Plan */}
         <FeatureSection
-          title="Treino: Engenharia Corporal Individual"
-          description="Seu objetivo é hipertrofia? O treino foca em carga e volume. É emagrecimento? O foco muda. Segurança Total: O único app que pergunta 'Onde você sente dor?' e remove exercícios perigosos para sua articulação específica."
+          title="Workout: Individual Body Engineering"
+          description="Is your goal muscle building? The workout focuses on load and volume. Is it weight loss? The focus changes. Total Safety: The only app that asks 'Where do you feel pain?' and removes dangerous exercises for your specific joint."
           image={<WorkoutVisual />}
           align="left"
         />
 
-        <SecondaryCTA text="Quero meu treino seguro e personalizado" />
+        <SecondaryCTA text="I want my safe and personalized workout" />
 
         {/* Feature D: Dashboard */}
         <FeatureSection
-          title="Metas transformadas em Ações."
-          description="O dashboard não mostra apenas 'perder 5kg'. Ele diz o que fazer HOJE. Beba seus 3L de água, bata sua proteína e complete o treino. O sistema de gamificação mantém você consistente."
+          title="Goals Transformed into Actions."
+          description="The dashboard doesn't just show 'lose 10lbs'. It tells you what to do TODAY. Drink your 3L of water, hit your protein, and complete your workout. The gamification system keeps you consistent."
           image={<DashboardVisual />}
           align="right"
         />

@@ -88,7 +88,7 @@ export function Pricing({
                     </Label>
                 </label>
                 <span className="ml-4 font-medium text-gray-300">
-                    Cobrança Anual <span className="text-primary font-bold ml-1">(Economize 20%)</span>
+                    Annual Billing <span className="text-primary font-bold ml-1">(Save 20%)</span>
                 </span>
             </div>
 
@@ -114,7 +114,7 @@ export function Pricing({
                         {plan.isPopular && (
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-blue-400 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg flex items-center gap-1">
                                 <Star className="w-3 h-3 fill-white" />
-                                Popular
+                                Most Popular
                             </div>
                         )}
 
@@ -130,7 +130,7 @@ export function Pricing({
                                 <span className="text-4xl font-bold text-white">
                                     <NumberFlow
                                         value={isMonthly ? Number(plan.price) : Number(plan.yearlyPrice)}
-                                        format={{ style: "currency", currency: "BRL" }}
+                                        format={{ style: "currency", currency: "USD" }}
                                     />
                                 </span>
                                 <span className="text-gray-500">/{plan.period}</span>
@@ -169,7 +169,7 @@ export function Pricing({
                             </a>
 
                             <p className="mt-4 text-xs text-center text-gray-500">
-                                {isMonthly ? "Cobrado mensalmente" : "Cobrado anualmente"}
+                                {isMonthly ? "Billed monthly" : "Billed annually"}
                             </p>
                         </div>
                     </motion.div>

@@ -11,34 +11,34 @@ type ComparisonRow = {
 
 const comparisonData: ComparisonRow[] = [
     {
-        feature: "Investimento Mensal",
-        zintra: { text: "R$ 59,90", sub: "(Acessível)", icon: true },
-        personal: { text: "R$ 600,00+", icon: false },
-        generic: { text: "R$ 29,90", icon: false }
+        feature: "Monthly Investment",
+        zintra: { text: "$19.90", sub: "(Affordable)", icon: true },
+        personal: { text: "$300+", icon: false },
+        generic: { text: "$9.90", icon: false }
     },
     {
-        feature: "Considera suas Dores/Lesões?",
-        zintra: { text: "Sim", sub: "(Proteção Automática)", icon: true },
-        personal: { text: "Sim", icon: true },
-        generic: { text: "Não", sub: "(Perigoso)", icon: "warning" }
+        feature: "Considers Your Pains/Injuries?",
+        zintra: { text: "Yes", sub: "(Automatic Protection)", icon: true },
+        personal: { text: "Yes", icon: true },
+        generic: { text: "No", sub: "(Dangerous)", icon: "warning" }
     },
     {
-        feature: "Flexibilidade na Dieta",
-        zintra: { text: "Troca alimentos na hora", icon: true },
-        personal: { text: "Depende de resposta", icon: "warning" },
-        generic: { text: "PDF Fixo", sub: "(Enjoativo)", icon: false }
+        feature: "Diet Flexibility",
+        zintra: { text: "Swap foods instantly", icon: true },
+        personal: { text: "Depends on response", icon: "warning" },
+        generic: { text: "Fixed PDF", sub: "(Boring)", icon: false }
     },
     {
-        feature: "Ajuste de Rota (Evolução)",
-        zintra: { text: "Quinzenal ou Semanal", icon: true },
-        personal: { text: "Mensal", icon: "warning" },
-        generic: { text: "Nunca", icon: false }
+        feature: "Route Adjustment (Evolution)",
+        zintra: { text: "Biweekly or Weekly", icon: true },
+        personal: { text: "Monthly", icon: "warning" },
+        generic: { text: "Never", icon: false }
     },
     {
-        feature: "Scanner de Prato (Foto)",
-        zintra: { text: "Sim (IA Inclusa)", icon: true },
-        personal: { text: "Não", icon: false },
-        generic: { text: "Não", icon: false }
+        feature: "Plate Scanner (Photo)",
+        zintra: { text: "Yes (AI Included)", icon: true },
+        personal: { text: "No", icon: false },
+        generic: { text: "No", icon: false }
     }
 ];
 
@@ -59,10 +59,10 @@ export const ComparisonTable = () => {
                     className="text-center mb-16 max-w-3xl mx-auto"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Muito mais que um app. <span className="text-primary">Muito mais barato que um Personal.</span>
+                        Much more than an app. <span className="text-primary">Much cheaper than a Personal Trainer.</span>
                     </h2>
                     <p className="text-lg text-gray-400 mb-8">
-                        Você não precisa pagar uma fortuna para emagrecer, nem arriscar sua coluna com treinos genéricos.
+                        You don't need to pay a fortune to lose weight, nor risk your back with generic workouts.
                     </p>
                 </motion.div>
 
@@ -79,12 +79,12 @@ export const ComparisonTable = () => {
                                 <th className="p-4 md:p-6 text-left text-gray-400 font-medium w-1/4"></th>
                                 <th className="p-4 md:p-6 text-center bg-primary/10 rounded-t-2xl border-t border-x border-primary/20 w-1/4 relative shadow-[0_0_30px_rgba(59,130,246,0.1)]">
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-primary/50">
-                                        RECOMENDADO
+                                        RECOMMENDED
                                     </div>
                                     <span className="text-xl font-bold text-white">Zintra AI</span>
                                 </th>
-                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">Personal + Nutri Presencial</th>
-                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">Apps Genéricos / YouTube</th>
+                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">Personal Trainer + Nutritionist</th>
+                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">Generic Apps / YouTube</th>
                             </tr>
                         </thead>
                         <tbody>

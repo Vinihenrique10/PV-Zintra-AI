@@ -20,11 +20,11 @@ export const Navbar = () => {
     };
 
     const navLinks = [
-        { name: "Como Funciona", id: "how-it-works" },
-        { name: "Funcionalidades", id: "features" },
-        { name: "Para Quem", id: "for-who" },
-        { name: "Depoimentos", id: "testimonials" },
-        { name: "Planos", id: "pricing" },
+        { name: "How It Works", id: "how-it-works" },
+        { name: "Features", id: "features" },
+        { name: "Who It's For", id: "for-who" },
+        { name: "Testimonials", id: "testimonials" },
+        { name: "Plans", id: "pricing" },
         { name: "FAQ", id: "faq" },
     ];
 

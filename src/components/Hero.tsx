@@ -26,7 +26,7 @@ export const Hero = () => {
                         className="mb-4"
                     >
                         <span className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-wide border border-primary/20">
-                            Zero genérico. 100% Você.
+                            Zero generic. 100% You.
                         </span>
                     </motion.div>
 
@@ -36,7 +36,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                         className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1]"
                     >
-                        Pare de tentar se encaixar em planos feitos para <span className="text-primary">"todo mundo"</span>.
+                        Stop trying to fit into plans made for <span className="text-primary">"everyone"</span>.
                     </motion.h1>
 
                     <motion.p
@@ -45,7 +45,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="text-lg md:text-xl text-gray-400 mb-10 max-w-lg"
                     >
-                        Tenha um protocolo de Nutrição e Treino desenhado exclusivamente para a sua biologia, sua rotina e seu objetivo — seja emagrecer, definir ou ganhar massa.
+                        Get a Nutrition and Workout protocol designed exclusively for your biology, your routine, and your goal — whether it's losing weight, getting lean, or building muscle.
                     </motion.p>
 
                     <motion.div
@@ -54,7 +54,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                     >
                         <Button size="lg" className="mb-12 md:mb-0" onClick={scrollToPricing}>
-                            Gerar Meu Plano Personalizado
+                            Generate My Personalized Plan
                         </Button>
                     </motion.div>
                 </div>

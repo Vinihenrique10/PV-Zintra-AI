@@ -3,33 +3,33 @@ import { AnimatedTestimonials } from './ui/animated-testimonials';
 
 const testimonials = [
     {
-        quote: "Uai, gente, eu achava que comia direitinho, mas a barriga nunca sumia, que trem difícil! Quando baixei o Zintra, vi que eu tava errando feio na distribuição da comida. Eu sou muito visual, então acordar e ver as 'Tarefas de Hoje' ali pra marcar o checkzinho ✅ me ajudou muito a ter disciplina. Foi esse controlezinho diário que fez a mágica acontecer e finalmente defini o abdômen.",
+        quote: "I used to think I was eating right, but my belly never went away, so frustrating! When I downloaded Zintra, I saw I was making big mistakes with my food distribution. I'm very visual, so waking up and seeing 'Today's Tasks' there to check off ✅ helped me a lot with discipline. It was that daily control that made the magic happen and I finally got defined abs.",
         name: "Mariana, 24",
-        designation: "Estudante Universitária",
+        designation: "University Student",
         src: "/depoimentos/dep01.jpg"
     },
     {
-        quote: "Cara, eu olho pra foto da esquerda e nem me reconheço. Eu tava muito cansada, já tinha tentado todas essas dietas malucas e sempre engordava o dobro depois. O Zintra foi diferente porque perguntou tudo da minha vida lá no cadastro. E mermão, o que me segurou foi ver a 'Motivação do Dia' e o foguinho da sequência aumentando. Foi sinistro, perdi muito peso e dessa vez foi de verdade.",
+        quote: "Honestly, I look at the before photo and don't even recognize myself. I was so tired, had tried all those crazy diets and always gained double the weight back. Zintra was different because it asked everything about my life during signup. And what kept me going was seeing the 'Daily Motivation' and watching my streak flame grow. It was amazing, I lost a lot of weight and this time it was for real.",
         name: "Carla, 32",
-        designation: "Vendedora",
+        designation: "Sales Representative",
         src: "/depoimentos/dep02.jpg"
     },
     {
-        quote: "Gente, sério... eu tava desesperada porque meu vestido de noiva não tava fechando e faltavam poucos meses. A tal da 'Consulta Científica' que ele gera no início é real mesmo, calculou exato. Fiquei obcecada no Resumo Nutricional tentando bater a meta certinho. Ah, e ter que 'encher o copinho' de água no app me ajudou demais a desinchar. Entrei no vestido e me senti maravilhosa.",
+        quote: "Seriously... I was desperate because my wedding dress wasn't closing and I only had a few months left. The 'Scientific Consultation' it generates at the start is actually real, it calculated exactly. I became obsessed with the Nutritional Summary trying to hit my targets perfectly. Oh, and having to 'fill the water glass' in the app helped me so much with bloating. I fit into the dress and felt amazing.",
         name: "Fernanda, 29",
-        designation: "Arquiteta (Noiva)",
+        designation: "Architect (Bride)",
         src: "/depoimentos/dep03.jpg"
     },
     {
-        quote: "Bah, guria, com a correria do trabalho e cuidando da casa, eu não tinha tempo nenhum pra ficar pesando comida. A virada de chave pra mim foi aquele botão de 'Analisar Refeição'. Eu tô no restaurante, tiro a foto do prato e o app já me dá uma noção se tá dentro do plano. Isso facilitou horrores a minha vida! Recomendo demais pra quem tem vida louca.",
-        name: "Patrícia, 35",
-        designation: "Gerente de Projetos",
+        quote: "With my hectic work schedule and taking care of the house, I had no time to weigh food. The game changer for me was that 'Analyze Meal' button. I'm at a restaurant, take a photo of the plate and the app already tells me if it fits my plan. This made my life so much easier! Highly recommend for anyone with a crazy life.",
+        name: "Patricia, 35",
+        designation: "Project Manager",
         src: "/depoimentos/dep04.jpg"
     },
     {
-        quote: "Cara, sinistro. Eu achava que treinava sério, mas o plano de treino do Zintra me mostrou o que é treinar de verdade, com as cargas e repetições certas pra mim. Além da dieta, ver a linhazinha do Gráfico de Peso descendo toda semana no dashboard é viciante e me manteve focada.",
+        quote: "Amazing. I thought I was training seriously, but Zintra's workout plan showed me what real training looks like, with the right weights and reps for me. Besides the diet, seeing the Weight Graph line going down every week on the dashboard is addicting and kept me focused.",
         name: "Bruna, 27",
-        designation: "Designer (RJ)",
+        designation: "Designer (NY)",
         src: "/depoimentos/dep05.png"
     }
 ];
@@ -44,7 +44,7 @@ export const Testimonials = () => {
                     viewport={{ once: true }}
                     className="text-3xl md:text-5xl font-bold mb-16 text-center"
                 >
-                    Resultados <span className="text-primary">Reais</span>.
+                    <span className="text-primary">Real</span> Results.
                 </motion.h2>
 
                 <AnimatedTestimonials testimonials={testimonials} autoplay={true} />

@@ -11,13 +11,13 @@ export const ProblemSection = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">
-                        Por que dietas de internet <span className="text-red-500">falham</span> com você?
+                        Why do internet diets <span className="text-red-500">fail</span> you?
                     </h2>
                     <p className="text-xl text-gray-400 leading-relaxed mb-6">
-                        Porque elas não conhecem você. Apps comuns e PDFs de internet tratam todo mundo como uma estatística. Eles ignoram que você tem dores no joelho, que odeia brócolis ou que seu metabolismo é diferente.
+                        Because they don't know you. Generic apps and internet PDFs treat everyone as a statistic. They ignore that you have knee pain, hate broccoli, or that your metabolism is different.
                     </p>
                     <p className="text-xl text-gray-400 leading-relaxed">
-                        <span className="text-white font-semibold">A Solução Zintra:</span> Nós não "chutamos" números. Nossa Inteligência Artificial analisa dezenas de variáveis do seu perfil para criar o caminho mais curto e eficiente entre você e seu objetivo.
+                        <span className="text-white font-semibold">The Zintra Solution:</span> We don't "guess" numbers. Our Artificial Intelligence analyzes dozens of variables from your profile to create the shortest and most efficient path between you and your goal.
                     </p>
                 </motion.div>
             </div>

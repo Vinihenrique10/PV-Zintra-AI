@@ -8,13 +8,13 @@ export const Footer = () => {
                 </div>
 
                 <div className="text-sm text-gray-500">
-                    © 2024 Zintra AI. Todos os direitos reservados.
+                    © 2024 Zintra AI. All rights reserved.
                 </div>
 
                 <div className="flex gap-6">
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors">Termos</a>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacidade</a>
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors">Suporte</a>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms</a>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    <a href="#" className="text-gray-400 hover:text-white transition-colors">Support</a>
                 </div>
             </div>
         </footer>

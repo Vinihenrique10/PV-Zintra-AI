@@ -13,10 +13,10 @@ export const ScannerSection = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Scanner IA: A <span className="text-primary">Liberdade</span> de Comer Fora
+                        AI Scanner: The <span className="text-primary">Freedom</span> to Eat Out
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Não fique refém da marmita. Aponte a câmera para qualquer prato e nossa IA diz se ele cabe no seu plano. Personalização é ter liberdade com controle.
+                        Don't be a prisoner to meal prep. Point your camera at any dish and our AI tells you if it fits your plan. Personalization means having freedom with control.
                     </p>
                 </motion.div>
 
@@ -24,7 +24,7 @@ export const ScannerSection = () => {
                 <div className="relative w-full max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
                     <img
                         src={scannerMockup}
-                        alt="Scanner de Alimentos Zintra AI"
+                        alt="Zintra AI Food Scanner"
                         className="w-full h-auto"
                     />
 

@@ -16,8 +16,8 @@ export const MealPlanVisual = () => {
                 <div className="pt-12 px-5 pb-6">
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h3 className="text-white font-bold text-lg leading-tight">Plano Alimentar</h3>
-                            <p className="text-primary text-sm font-medium">Ganho Limpo</p>
+                            <h3 className="text-white font-bold text-lg leading-tight">Meal Plan</h3>
+                            <p className="text-primary text-sm font-medium">Lean Gain</p>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                             <div className="w-4 h-4 rounded-full bg-primary" />
@@ -28,7 +28,7 @@ export const MealPlanVisual = () => {
                     <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 border border-white/10 flex justify-between items-center text-[10px] text-gray-400">
                         <div className="flex flex-col items-center">
                             <span className="text-white font-bold text-xs">250g</span>
-                            <span>Carbos</span>
+                            <span>Carbs</span>
                         </div>
                         <div className="w-px h-6 bg-white/10" />
                         <div className="flex flex-col items-center">
@@ -38,7 +38,7 @@ export const MealPlanVisual = () => {
                         <div className="w-px h-6 bg-white/10" />
                         <div className="flex flex-col items-center">
                             <span className="text-white font-bold text-xs">70g</span>
-                            <span>Gord</span>
+                            <span>Fat</span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ export const MealPlanVisual = () => {
 
                         <div className="flex items-center gap-2 mb-3 text-xs text-gray-400 font-medium uppercase tracking-wider">
                             <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                            Café da Manhã
+                            Breakfast
                         </div>
 
                         <div className="flex items-center gap-4 mb-4">
@@ -70,8 +70,8 @@ export const MealPlanVisual = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-white font-medium text-sm">3 Ovos Inteiros</div>
-                                <div className="text-gray-400 text-xs">+ 50g Aveia</div>
+                                <div className="text-white font-medium text-sm">3 Whole Eggs</div>
+                                <div className="text-gray-400 text-xs">+ 50g Oatmeal</div>
                             </div>
                         </div>
 
@@ -95,7 +95,7 @@ export const MealPlanVisual = () => {
 
                         <div className="flex items-center gap-2 mb-3 text-xs text-gray-400 font-medium uppercase tracking-wider">
                             <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                            Almoço
+                            Lunch
                         </div>
 
                         <div className="flex items-center gap-4 mb-4">
@@ -108,8 +108,8 @@ export const MealPlanVisual = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-white font-medium text-sm">150g Peito Frango</div>
-                                <div className="text-gray-400 text-xs">+ 200g Arroz Branco</div>
+                                <div className="text-white font-medium text-sm">150g Chicken Breast</div>
+                                <div className="text-gray-400 text-xs">+ 200g White Rice</div>
                             </div>
                         </div>
 

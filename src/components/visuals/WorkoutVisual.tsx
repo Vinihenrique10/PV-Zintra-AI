@@ -16,8 +16,8 @@ export const WorkoutVisual = () => {
                 <div className="pt-12 px-5 pb-6">
                     <div className="flex justify-between items-start mb-2">
                         <div>
-                            <h3 className="text-white font-bold text-lg leading-tight">Treino A</h3>
-                            <p className="text-blue-400 text-sm font-medium">Inferiores (Foco Quadríceps)</p>
+                            <h3 className="text-white font-bold text-lg leading-tight">Workout A</h3>
+                            <p className="text-blue-400 text-sm font-medium">Lower Body (Quad Focus)</p>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                             <div className="w-4 h-4 rounded-full bg-blue-500" />
@@ -27,7 +27,7 @@ export const WorkoutVisual = () => {
                     {/* Protection Badge */}
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-[10px] text-blue-400 font-medium">
                         <Shield className="w-3 h-3" />
-                        Proteção Articular: Ativa
+                        Joint Protection: Active
                     </div>
                 </div>
 
@@ -44,8 +44,8 @@ export const WorkoutVisual = () => {
 
                         <div className="flex justify-between items-start mb-3 pl-2">
                             <div>
-                                <h4 className="text-white font-bold text-sm">Agachamento Livre</h4>
-                                <span className="text-xs text-gray-400">4 Séries x 10-12 Reps</span>
+                                <h4 className="text-white font-bold text-sm">Barbell Squat</h4>
+                                <span className="text-xs text-gray-400">4 Sets x 10-12 Reps</span>
                             </div>
                             <div className="p-1.5 rounded-lg bg-blue-500 text-white">
                                 <Play className="w-3 h-3 fill-current" />
@@ -55,7 +55,7 @@ export const WorkoutVisual = () => {
                         {/* Progress Bar */}
                         <div className="pl-2 mb-3">
                             <div className="flex justify-between text-[10px] text-gray-400 mb-1">
-                                <span>Série 2 de 4</span>
+                                <span>Set 2 of 4</span>
                                 <span className="text-blue-400">50%</span>
                             </div>
                             <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden">
@@ -66,11 +66,11 @@ export const WorkoutVisual = () => {
                         {/* Stats */}
                         <div className="pl-2 flex gap-3">
                             <div className="bg-black/30 px-2 py-1 rounded-md border border-white/5">
-                                <span className="text-[10px] text-gray-500 block">Carga</span>
-                                <span className="text-xs font-bold text-white">60kg</span>
+                                <span className="text-[10px] text-gray-500 block">Weight</span>
+                                <span className="text-xs font-bold text-white">135lbs</span>
                             </div>
                             <div className="bg-black/30 px-2 py-1 rounded-md border border-white/5">
-                                <span className="text-[10px] text-gray-500 block">Descanso</span>
+                                <span className="text-[10px] text-gray-500 block">Rest</span>
                                 <span className="text-xs font-bold text-white">90s</span>
                             </div>
                         </div>
@@ -86,7 +86,7 @@ export const WorkoutVisual = () => {
                         <div className="flex justify-between items-start mb-2">
                             <div>
                                 <h4 className="text-white font-bold text-sm">Leg Press 45º</h4>
-                                <span className="text-xs text-gray-400">3 Séries x 12-15 Reps</span>
+                                <span className="text-xs text-gray-400">3 Sets x 12-15 Reps</span>
                             </div>
                             <div className="p-1.5 rounded-lg bg-white/10 text-gray-400">
                                 <Dumbbell className="w-3 h-3" />
@@ -103,8 +103,8 @@ export const WorkoutVisual = () => {
                     >
                         <div className="flex justify-between items-start mb-2">
                             <div>
-                                <h4 className="text-white font-bold text-sm">Cadeira Extensora</h4>
-                                <span className="text-xs text-gray-400">3 Séries x 15 Reps</span>
+                                <h4 className="text-white font-bold text-sm">Leg Extension</h4>
+                                <span className="text-xs text-gray-400">3 Sets x 15 Reps</span>
                             </div>
                             <div className="p-1.5 rounded-lg bg-white/10 text-gray-400">
                                 <Dumbbell className="w-3 h-3" />
@@ -116,7 +116,7 @@ export const WorkoutVisual = () => {
                 {/* Bottom Timer */}
                 <div className="absolute bottom-0 left-0 right-0 h-20 bg-[#0B0F19]/90 backdrop-blur-xl border-t border-blue-500/20 flex items-center justify-between px-6 z-10">
                     <div>
-                        <div className="text-xs text-gray-400 mb-0.5">Descanso</div>
+                        <div className="text-xs text-gray-400 mb-0.5">Rest</div>
                         <div className="text-2xl font-bold text-white font-mono">00:45</div>
                     </div>
 
