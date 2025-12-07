@@ -1,91 +1,39 @@
-import { Layout } from './components/Layout';
-import { SpeedInsights } from "@vercel/speed-insights/react"
-import { Analytics } from "@vercel/analytics/react"
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { ProblemSection } from './components/ProblemSection';
-import { FeatureSection } from './components/FeatureSection';
-import { ScannerSection } from './components/ScannerSection';
-import { MealPlanVisual } from './components/visuals/MealPlanVisual';
-import { WorkoutVisual } from './components/visuals/WorkoutVisual';
-import { DashboardVisual } from './components/visuals/DashboardVisual';
-import { Testimonials } from './components/Testimonials';
-import { ComparisonTable } from './components/ComparisonTable';
-import { PricingBasic } from './components/PricingBasic';
-import { FAQ } from './components/FAQ';
-import { Footer } from './components/Footer';
-import { SecondaryCTA } from './components/SecondaryCTA';
 
-
-import { MechanismSection } from './components/MechanismSection';
-import { QualificationSection } from './components/QualificationSection';
-import { OfferSection } from './components/OfferSection';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
+import { LandingPage } from './pages/LandingPage';
+import { ThankYou } from './pages/ThankYou';
 
 function App() {
   return (
-    <Layout>
+    <Router>
       <SpeedInsights />
       <Analytics />
-      <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <ProblemSection />
-        <div id="how-it-works">
-          <MechanismSection />
-        </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
 
-        {/* Feature A: Nutrition Plan */}
-        <div id="features">
-          <FeatureSection
-            title="Nutrition: The Meal Plan that Works for YOU"
-            description="There's no universal 'perfect diet'. There's the diet you can actually follow. The app creates meals with foods you love. Want to swap dinner? The system recalculates macros to keep your goal intact."
-            image={<MealPlanVisual />}
-            align="right"
-          />
-        </div>
-
-        {/* Feature B: AI Scanner */}
-        <ScannerSection />
-
-        <SecondaryCTA text="I want to lose weight eating what I love" />
-
-        {/* Feature C: Workout Plan */}
-        <FeatureSection
-          title="Workout: Individual Body Engineering"
-          description="Is your goal muscle building? The workout focuses on load and volume. Is it weight loss? The focus changes. Total Safety: The only app that asks 'Where do you feel pain?' and removes dangerous exercises for your specific joint."
-          image={<WorkoutVisual />}
-          align="left"
+        {/* Thank You Pages */}
+        <Route
+          path="/thank-you-basic-monthly"
+          element={<ThankYou planName="Basic Monthly Plan" />}
         />
-
-        <SecondaryCTA text="I want my safe and personalized workout" />
-
-        {/* Feature D: Dashboard */}
-        <FeatureSection
-          title="Goals Transformed into Actions."
-          description="The dashboard doesn't just show 'lose 10lbs'. It tells you what to do TODAY. Drink your 3L of water, hit your protein, and complete your workout. The gamification system keeps you consistent."
-          image={<DashboardVisual />}
-          align="right"
+        <Route
+          path="/thank-you-basic-annual"
+          element={<ThankYou planName="Basic Annual Plan" />}
         />
-
-        <div id="for-who">
-          <QualificationSection />
-        </div>
-
-        <div id="testimonials">
-          <Testimonials />
-        </div>
-
-        <OfferSection />
-
-        <ComparisonTable />
-        <PricingBasic />
-        <div id="faq">
-          <FAQ />
-        </div>
-      </main>
-      <Footer />
-    </Layout>
+        <Route
+          path="/thank-you-pro-monthly"
+          element={<ThankYou planName="Pro Monthly Plan" />}
+        />
+        <Route
+          path="/thank-you-pro-annual"
+          element={<ThankYou planName="Pro Annual Plan" />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
