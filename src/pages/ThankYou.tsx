@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { Layout } from "../components/Layout";
 import { CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import confetti from "canvas-confetti";
 import { Button } from "../components/ui/button";
 
@@ -67,11 +67,13 @@ export function ThankYou({ planName }: ThankYouProps) {
                             </p>
                         </div>
 
-                        <Link to="/">
+
+                        <a href="https://app.zintraai.com/">
                             <Button className="w-full font-bold bg-white text-black hover:bg-gray-200 py-6 rounded-xl">
-                                Back to Home
+                                Login to Access
                             </Button>
-                        </Link>
+                        </a>
+
                     </div>
                 </div>
             </div>
