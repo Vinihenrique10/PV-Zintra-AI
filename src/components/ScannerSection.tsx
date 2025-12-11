@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import scannerMockup from '../assets/scanner-mockup.png';
+import { ScannerVisual } from './visuals/ScannerVisual';
 
 export const ScannerSection = () => {
     return (
@@ -21,15 +21,11 @@ export const ScannerSection = () => {
                 </motion.div>
 
                 {/* Scanner Visual */}
-                <div className="relative w-full max-w-md mx-auto rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl">
-                    <img
-                        src={scannerMockup}
-                        alt="Zintra AI Food Scanner"
-                        className="w-full h-auto"
-                    />
+                <div className="relative w-full max-w-md mx-auto">
+                    <ScannerVisual />
 
                     {/* Glow behind */}
-                    <div className="absolute -inset-4 bg-primary/20 blur-3xl -z-10 rounded-full opacity-50" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/20 blur-3xl -z-10 rounded-full opacity-50 pointer-events-none" />
                 </div>
             </div>
         </section>
