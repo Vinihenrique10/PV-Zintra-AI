@@ -1,84 +1,95 @@
-
+import { Suspense, lazy } from 'react';
 import { Layout } from '../components/Layout';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
-import { ProblemSection } from '../components/ProblemSection';
-import { FeatureSection } from '../components/FeatureSection';
-import { ScannerSection } from '../components/ScannerSection';
-import { MealPlanVisual } from '../components/visuals/MealPlanVisual';
-import { WorkoutVisual } from '../components/visuals/WorkoutVisual';
-import { DashboardVisual } from '../components/visuals/DashboardVisual';
-import { Testimonials } from '../components/Testimonials';
-import { ComparisonTable } from '../components/ComparisonTable';
-import { PricingBasic } from '../components/PricingBasic';
-import { FAQ } from '../components/FAQ';
 import { Footer } from '../components/Footer';
-import { SecondaryCTA } from '../components/SecondaryCTA';
+import { useLanguage } from '../contexts/LanguageContext';
 
+// Lazy load components below the fold
+const ProblemSection = lazy(() => import('../components/ProblemSection').then(module => ({ default: module.ProblemSection })));
+const FeatureSection = lazy(() => import('../components/FeatureSection').then(module => ({ default: module.FeatureSection })));
+const ScannerSection = lazy(() => import('../components/ScannerSection').then(module => ({ default: module.ScannerSection })));
+const MealPlanVisual = lazy(() => import('../components/visuals/MealPlanVisual').then(module => ({ default: module.MealPlanVisual })));
+const WorkoutVisual = lazy(() => import('../components/visuals/WorkoutVisual').then(module => ({ default: module.WorkoutVisual })));
+const DashboardVisual = lazy(() => import('../components/visuals/DashboardVisual').then(module => ({ default: module.DashboardVisual })));
+const Testimonials = lazy(() => import('../components/Testimonials').then(module => ({ default: module.Testimonials })));
+const ComparisonTable = lazy(() => import('../components/ComparisonTable').then(module => ({ default: module.ComparisonTable })));
+const PricingBasic = lazy(() => import('../components/PricingBasic').then(module => ({ default: module.PricingBasic })));
+const FAQ = lazy(() => import('../components/FAQ').then(module => ({ default: module.FAQ })));
+const SecondaryCTA = lazy(() => import('../components/SecondaryCTA').then(module => ({ default: module.SecondaryCTA })));
+const MechanismSection = lazy(() => import('../components/MechanismSection').then(module => ({ default: module.MechanismSection })));
+const QualificationSection = lazy(() => import('../components/QualificationSection').then(module => ({ default: module.QualificationSection })));
+const OfferSection = lazy(() => import('../components/OfferSection').then(module => ({ default: module.OfferSection })));
 
-import { MechanismSection } from '../components/MechanismSection';
-import { QualificationSection } from '../components/QualificationSection';
-import { OfferSection } from '../components/OfferSection';
+const LoadingFallback = () => (
+    <div className="py-20 flex justify-center items-center">
+        <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full" />
+    </div>
+);
 
 export function LandingPage() {
+    const { t } = useLanguage();
+
     return (
         <Layout>
             <Navbar />
             <main className="relative z-10">
                 <Hero />
-                <ProblemSection />
-                <div id="how-it-works">
-                    <MechanismSection />
-                </div>
+                <Suspense fallback={<LoadingFallback />}>
+                    <ProblemSection />
+                    <div id="how-it-works">
+                        <MechanismSection />
+                    </div>
 
-                {/* Feature A: Nutrition Plan */}
-                <div id="features">
+                    {/* Feature A: Nutrition Plan */}
+                    <div id="features">
+                        <FeatureSection
+                            title={t.features.nutrition.title}
+                            description={t.features.nutrition.description}
+                            image={<MealPlanVisual />}
+                            align="right"
+                        />
+                    </div>
+
+                    {/* Feature B: AI Scanner */}
+                    <ScannerSection />
+
+                    <SecondaryCTA text={t.cta.secondary1} />
+
+                    {/* Feature C: Workout Plan */}
                     <FeatureSection
-                        title="Nutrition: The Meal Plan that Works for YOU"
-                        description="There's no universal 'perfect diet'. There's the diet you can actually follow. The app creates meals with foods you love. Want to swap dinner? The system recalculates macros to keep your goal intact."
-                        image={<MealPlanVisual />}
+                        title={t.features.workout.title}
+                        description={t.features.workout.description}
+                        image={<WorkoutVisual />}
+                        align="left"
+                    />
+
+                    <SecondaryCTA text={t.cta.secondary2} />
+
+                    {/* Feature D: Dashboard */}
+                    <FeatureSection
+                        title={t.features.dashboard.title}
+                        description={t.features.dashboard.description}
+                        image={<DashboardVisual />}
                         align="right"
                     />
-                </div>
 
-                {/* Feature B: AI Scanner */}
-                <ScannerSection />
+                    <div id="for-who">
+                        <QualificationSection />
+                    </div>
 
-                <SecondaryCTA text="I want to lose weight eating what I love" />
+                    <div id="testimonials">
+                        <Testimonials />
+                    </div>
 
-                {/* Feature C: Workout Plan */}
-                <FeatureSection
-                    title="Workout: Individual Body Engineering"
-                    description="Is your goal muscle building? The workout focuses on load and volume. Is it weight loss? The focus changes. Total Safety: The only app that asks 'Where do you feel pain?' and removes dangerous exercises for your specific joint."
-                    image={<WorkoutVisual />}
-                    align="left"
-                />
+                    <OfferSection />
 
-                <SecondaryCTA text="I want my safe and personalized workout" />
-
-                {/* Feature D: Dashboard */}
-                <FeatureSection
-                    title="Goals Transformed into Actions."
-                    description="The dashboard doesn't just show 'lose 10lbs'. It tells you what to do TODAY. Drink your 3L of water, hit your protein, and complete your workout. The gamification system keeps you consistent."
-                    image={<DashboardVisual />}
-                    align="right"
-                />
-
-                <div id="for-who">
-                    <QualificationSection />
-                </div>
-
-                <div id="testimonials">
-                    <Testimonials />
-                </div>
-
-                <OfferSection />
-
-                <ComparisonTable />
-                <PricingBasic />
-                <div id="faq">
-                    <FAQ />
-                </div>
+                    <ComparisonTable />
+                    <PricingBasic />
+                    <div id="faq">
+                        <FAQ />
+                    </div>
+                </Suspense>
             </main>
             <Footer />
         </Layout>

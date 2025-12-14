@@ -1,25 +1,28 @@
 import { motion } from 'framer-motion';
 import { User, Target, Zap } from 'lucide-react';
-
-const steps = [
-    {
-        icon: User,
-        title: "We Understand Who You Are",
-        description: "We don't just ask for weight and height. We analyze your routine, stress level, training experience, and food preferences."
-    },
-    {
-        icon: Target,
-        title: "We Define Your Goal",
-        description: "Want to lose 20lbs? Want to build leg muscle? Just want better health? The algorithm adjusts calories and training intensity for your specific goal."
-    },
-    {
-        icon: Zap,
-        title: "The Plan Comes to Life",
-        description: "We generate a unique protocol. If you change your mind or routine, the plan changes with you."
-    }
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const MechanismSection = () => {
+    const { t } = useLanguage();
+
+    const steps = [
+        {
+            icon: User,
+            title: t.mechanism.steps.step1.title,
+            description: t.mechanism.steps.step1.description
+        },
+        {
+            icon: Target,
+            title: t.mechanism.steps.step2.title,
+            description: t.mechanism.steps.step2.description
+        },
+        {
+            icon: Zap,
+            title: t.mechanism.steps.step3.title,
+            description: t.mechanism.steps.step3.description
+        }
+    ];
+
     return (
         <section className="py-24 px-6 relative overflow-hidden bg-black/30">
             <div className="container mx-auto max-w-6xl relative z-10">
@@ -31,10 +34,10 @@ export const MechanismSection = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        How We Create the <span className="text-primary">Perfect Plan</span>
+                        {t.mechanism.header.title.start}<span className="text-primary">{t.mechanism.header.title.highlight}</span>
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Zintra adapts to ANY goal.
+                        {t.mechanism.header.subtitle}
                     </p>
                 </motion.div>
 

@@ -1,14 +1,10 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-
-const qualifications = [
-    "Want to lose weight, but won't give up eating delicious food.",
-    "Have a busy routine and little time to plan meals.",
-    "Are afraid of getting injured with generic internet workouts.",
-    "Have tried everything and need organization and consistency."
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const QualificationSection = () => {
+    const { t } = useLanguage();
+
     return (
         <section className="py-24 px-6 relative overflow-hidden">
             <div className="container mx-auto max-w-4xl relative z-10">
@@ -25,15 +21,15 @@ export const QualificationSection = () => {
 
                     <div className="text-center mb-12 relative z-10">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Who is <span className="text-primary">Zintra</span> For?
+                            {t.qualification.title.start}<span className="text-primary">{t.qualification.title.highlight}</span>{t.qualification.title.end}
                         </h2>
                         <p className="text-xl text-gray-400">
-                            This app was made for you if you:
+                            {t.qualification.subtitle}
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 relative z-10">
-                        {qualifications.map((item, index) => (
+                        {t.qualification.items.map((item, index) => (
                             <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-white/5 transition-colors">
                                 <div className="mt-1 bg-primary/20 p-1 rounded-full">
                                     <CheckCircle2 className="text-primary shrink-0" size={20} />

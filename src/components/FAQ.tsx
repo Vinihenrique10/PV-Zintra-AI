@@ -1,34 +1,36 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { clsx } from 'clsx';
-
-const faqs = [
-    {
-        question: "How do I receive access?",
-        answer: "The system automatically creates your user after payment and sends it by email. You'll receive your login and password in less than 2 minutes."
-    },
-    {
-        question: "Does the meal plan consider my restrictions?",
-        answer: "Yes. During the initial setup, you can mark allergies (lactose, gluten, etc.) and preferences (vegan, vegetarian). The AI will never suggest something you can't eat."
-    },
-    {
-        question: "Can I cancel anytime?",
-        answer: "Yes. There's no commitment on the monthly plan. You can cancel directly through the app in 'Settings' without needing to talk to anyone."
-    },
-    {
-        question: "Is it suitable for beginners?",
-        answer: "Absolutely. Zintra adjusts the workout volume and exercise complexity based on your experience level."
-    }
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const FAQ = () => {
+    const { t } = useLanguage();
     const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+    const faqs = [
+        {
+            question: t.faq.items[0].question,
+            answer: t.faq.items[0].answer
+        },
+        {
+            question: t.faq.items[1].question,
+            answer: t.faq.items[1].answer
+        },
+        {
+            question: t.faq.items[2].question,
+            answer: t.faq.items[2].answer
+        },
+        {
+            question: t.faq.items[3].question,
+            answer: t.faq.items[3].answer
+        }
+    ];
 
     return (
         <section className="py-24 px-6 relative overflow-hidden">
             <div className="container mx-auto max-w-3xl relative z-10">
                 <h2 className="text-3xl md:text-5xl font-bold mb-16 text-center">
-                    Frequently Asked Questions
+                    {t.faq.title}
                 </h2>
 
                 <div className="space-y-4">

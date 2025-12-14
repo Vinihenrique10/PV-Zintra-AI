@@ -1,48 +1,51 @@
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 import { Check, X, AlertTriangle } from 'lucide-react';
-
-type ComparisonRow = {
-    feature: string;
-    zintra: { text: string; sub?: string; icon: boolean | "warning" };
-    personal: { text: string; icon: boolean | "warning" };
-    generic: { text: string; sub?: string; icon: boolean | "warning" };
-};
-
-const comparisonData: ComparisonRow[] = [
-    {
-        feature: "Monthly Investment",
-        zintra: { text: "$19.90", sub: "(Affordable)", icon: true },
-        personal: { text: "$300+", icon: false },
-        generic: { text: "$9.90", icon: false }
-    },
-    {
-        feature: "Considers Your Pains/Injuries?",
-        zintra: { text: "Yes", sub: "(Automatic Protection)", icon: true },
-        personal: { text: "Yes", icon: true },
-        generic: { text: "No", sub: "(Dangerous)", icon: "warning" }
-    },
-    {
-        feature: "Diet Flexibility",
-        zintra: { text: "Swap foods instantly", icon: true },
-        personal: { text: "Depends on response", icon: "warning" },
-        generic: { text: "Fixed PDF", sub: "(Boring)", icon: false }
-    },
-    {
-        feature: "Route Adjustment (Evolution)",
-        zintra: { text: "Biweekly or Weekly", icon: true },
-        personal: { text: "Monthly", icon: "warning" },
-        generic: { text: "Never", icon: false }
-    },
-    {
-        feature: "Plate Scanner (Photo)",
-        zintra: { text: "Yes (AI Included)", icon: true },
-        personal: { text: "No", icon: false },
-        generic: { text: "No", icon: false }
-    }
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const ComparisonTable = () => {
+    const { t } = useLanguage();
+
+    type ComparisonRow = {
+        feature: string;
+        zintra: { text: string; sub?: string; icon: boolean | "warning" };
+        personal: { text: string; icon: boolean | "warning" };
+        generic: { text: string; sub?: string; icon: boolean | "warning" };
+    };
+
+    const comparisonData: ComparisonRow[] = [
+        {
+            feature: t.comparison.rows.investment.feature,
+            zintra: { text: t.comparison.rows.investment.zintra.text, sub: t.comparison.rows.investment.zintra.sub, icon: true },
+            personal: { text: t.comparison.rows.investment.personal, icon: false },
+            generic: { text: t.comparison.rows.investment.generic, icon: false }
+        },
+        {
+            feature: t.comparison.rows.injuries.feature,
+            zintra: { text: t.comparison.rows.injuries.zintra.text, sub: t.comparison.rows.injuries.zintra.sub, icon: true },
+            personal: { text: t.comparison.rows.injuries.personal, icon: true },
+            generic: { text: t.comparison.rows.injuries.generic.text, sub: t.comparison.rows.injuries.generic.sub, icon: "warning" }
+        },
+        {
+            feature: t.comparison.rows.flexibility.feature,
+            zintra: { text: t.comparison.rows.flexibility.zintra, icon: true },
+            personal: { text: t.comparison.rows.flexibility.personal, icon: "warning" },
+            generic: { text: t.comparison.rows.flexibility.generic.text, sub: t.comparison.rows.flexibility.generic.sub, icon: false }
+        },
+        {
+            feature: t.comparison.rows.evolution.feature,
+            zintra: { text: t.comparison.rows.evolution.zintra, icon: true },
+            personal: { text: t.comparison.rows.evolution.personal, icon: "warning" },
+            generic: { text: t.comparison.rows.evolution.generic, icon: false }
+        },
+        {
+            feature: t.comparison.rows.scanner.feature,
+            zintra: { text: t.comparison.rows.scanner.zintra, icon: true },
+            personal: { text: t.comparison.rows.scanner.personal, icon: false },
+            generic: { text: t.comparison.rows.scanner.generic, icon: false }
+        }
+    ];
+
     const renderIcon = (type: boolean | "warning") => {
         if (type === true) return <Check className="w-5 h-5 text-green-500 inline-block mr-2" />;
         if (type === "warning") return <AlertTriangle className="w-5 h-5 text-yellow-500 inline-block mr-2" />;
@@ -59,10 +62,10 @@ export const ComparisonTable = () => {
                     className="text-center mb-16 max-w-3xl mx-auto"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Much more than an app. <span className="text-primary">Much cheaper than a Personal Trainer.</span>
+                        {t.comparison.title.start}<span className="text-primary">{t.comparison.title.highlight}</span>
                     </h2>
                     <p className="text-lg text-gray-400 mb-8">
-                        You don't need to pay a fortune to lose weight, nor risk your back with generic workouts.
+                        {t.comparison.subtitle}
                     </p>
                 </motion.div>
 
@@ -79,12 +82,12 @@ export const ComparisonTable = () => {
                                 <th className="p-4 md:p-6 text-left text-gray-400 font-medium w-1/4"></th>
                                 <th className="p-4 md:p-6 text-center bg-primary/10 rounded-t-2xl border-t border-x border-primary/20 w-1/4 relative shadow-[0_0_30px_rgba(59,130,246,0.1)]">
                                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg shadow-primary/50">
-                                        RECOMMENDED
+                                        {t.comparison.headers.recommended}
                                     </div>
-                                    <span className="text-xl font-bold text-white">Zintra AI</span>
+                                    <span className="text-xl font-bold text-white">{t.comparison.headers.zintra}</span>
                                 </th>
-                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">Personal Trainer + Nutritionist</th>
-                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">Generic Apps / YouTube</th>
+                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">{t.comparison.headers.personal}</th>
+                                <th className="p-4 md:p-6 text-center text-gray-400 font-medium w-1/4">{t.comparison.headers.generic}</th>
                             </tr>
                         </thead>
                         <tbody>

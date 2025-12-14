@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { ScannerVisual } from './visuals/ScannerVisual';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const ScannerSection = () => {
+    const { t } = useLanguage();
     return (
         <section className="py-24 px-6 relative overflow-hidden bg-black/50">
             <div className="container mx-auto max-w-4xl text-center relative z-10">
@@ -13,10 +15,10 @@ export const ScannerSection = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        AI Scanner: The <span className="text-primary">Freedom</span> to Eat Out
+                        {t.scanner.title.start}<span className="text-primary">{t.scanner.title.highlight}</span>{t.scanner.title.end}
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Don't be a prisoner to meal prep. Point your camera at any dish and our AI tells you if it fits your plan. Personalization means having freedom with control.
+                        {t.scanner.subtitle}
                     </p>
                 </motion.div>
 

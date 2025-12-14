@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
-import scannerFoodBg from '../../assets/scanner-food-bg.png';
+import scannerFoodBg from '../../assets/scanner-food-bg.jpg';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const ScannerVisual = () => {
+    const { t } = useLanguage();
     return (
         <div className="relative mx-auto w-full max-w-[320px] aspect-[9/19] bg-black rounded-[3rem] border-[8px] border-gray-900 shadow-2xl overflow-hidden ring-1 ring-white/10">
             {/* Dynamic Island / Notch */}
@@ -40,7 +42,7 @@ export const ScannerVisual = () => {
                     <div className="px-4 flex justify-center items-center">
                         <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 border border-blue-400/30 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
                             <Sparkles className="w-3 h-3 text-blue-400 animate-pulse" />
-                            <span className="text-[10px] font-semibold text-white tracking-wide uppercase">Analyzing Meal...</span>
+                            <span className="text-[10px] font-semibold text-white tracking-wide uppercase">{t.scanner.visual.analyzing}</span>
                         </div>
                     </div>
 
@@ -80,8 +82,8 @@ export const ScannerVisual = () => {
                                 <div className="relative">
                                     <div className="absolute bottom-0 left-0 w-[20px] h-[30px] border-l border-b border-blue-400/50 -translate-x-full translate-y-full" />
                                     <div className="bg-black/70 backdrop-blur-md border border-blue-500/30 p-2.5 rounded-lg shadow-lg min-w-[140px]">
-                                        <div className="text-[11px] font-bold text-blue-300 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">Grilled Salmon</div>
-                                        <div className="text-[10px] text-gray-200 font-medium">150g • 310 kcal</div>
+                                        <div className="text-[11px] font-bold text-blue-300 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">{t.scanner.visual.salmon}</div>
+                                        <div className="text-[10px] text-gray-200 font-medium">{t.scanner.visual.salmonInfo}</div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -114,8 +116,8 @@ export const ScannerVisual = () => {
                                 <div className="relative">
                                     <div className="absolute top-0 right-0 w-[20px] h-[30px] border-r border-t border-blue-400/50 translate-x-full -translate-y-full" />
                                     <div className="bg-black/70 backdrop-blur-md border border-blue-500/30 p-2.5 rounded-lg shadow-lg text-right min-w-[150px]">
-                                        <div className="text-[11px] font-bold text-blue-300 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">Quinoa & Avocado Salad</div>
-                                        <div className="text-[10px] text-gray-200 font-medium">120g • 180 kcal</div>
+                                        <div className="text-[11px] font-bold text-blue-300 drop-shadow-[0_0_5px_rgba(59,130,246,0.5)]">{t.scanner.visual.salad}</div>
+                                        <div className="text-[10px] text-gray-200 font-medium">{t.scanner.visual.saladInfo}</div>
                                     </div>
                                 </div>
                             </motion.div>
@@ -131,7 +133,7 @@ export const ScannerVisual = () => {
                                 <div className="w-14 h-14 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
                             </div>
                         </div>
-                        <div className="text-[10px] text-white/50 font-medium uppercase tracking-widest">Tap to Scan</div>
+                        <div className="text-[10px] text-white/50 font-medium uppercase tracking-widest">{t.scanner.visual.tapToScan}</div>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/MagneticButton';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const OfferSection = () => {
+    const { t } = useLanguage();
     const scrollToPricing = () => {
         const pricingSection = document.getElementById('pricing');
         if (pricingSection) {
@@ -19,14 +21,14 @@ export const OfferSection = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        Your body's science, <span className="text-primary">decoded</span>.
+                        {t.offer.title.start}<span className="text-primary">{t.offer.title.highlight}</span>{t.offer.title.end}
                     </h2>
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-                        Don't waste more time with trial and error. Start today with a plan that was tailor-made for you.
+                        {t.offer.subtitle}
                     </p>
 
                     <Button size="lg" onClick={scrollToPricing}>
-                        Start Now
+                        {t.offer.button}
                     </Button>
                 </motion.div>
             </div>

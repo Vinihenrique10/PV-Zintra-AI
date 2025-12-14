@@ -1,8 +1,10 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Navbar = () => {
+    const { t } = useLanguage();
     const { scrollY } = useScroll();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,12 +22,12 @@ export const Navbar = () => {
     };
 
     const navLinks = [
-        { name: "How It Works", id: "how-it-works" },
-        { name: "Features", id: "features" },
-        { name: "Who It's For", id: "for-who" },
-        { name: "Testimonials", id: "testimonials" },
-        { name: "Plans", id: "pricing" },
-        { name: "FAQ", id: "faq" },
+        { name: t.nav.howItWorks, id: "how-it-works" },
+        { name: t.nav.features, id: "features" },
+        { name: t.nav.forWho, id: "for-who" },
+        { name: t.nav.testimonials, id: "testimonials" },
+        { name: t.nav.plans, id: "pricing" },
+        { name: t.nav.faq, id: "faq" },
     ];
 
     return (
@@ -79,7 +81,7 @@ export const Navbar = () => {
                             : "border border-white/10 hover:bg-white/5"
                             }`}
                     >
-                        Login
+                        {t.nav.login}
                     </motion.a>
 
                     {/* Mobile Menu Toggle */}
@@ -115,7 +117,7 @@ export const Navbar = () => {
                                 href="https://app.zintraai.com/"
                                 className="mt-8 px-8 py-3 rounded-full bg-white text-black font-bold text-lg"
                             >
-                                Login
+                                {t.nav.login}
                             </a>
                         </div>
                     </motion.div>
