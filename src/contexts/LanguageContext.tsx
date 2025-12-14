@@ -18,20 +18,16 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         // Check navigator.languages (array of preferred languages) first
         const languages = navigator.languages || [navigator.language];
 
-        // Dynamic detection: Iterate through user's preferred languages
-        // and check if we have a translation available for it.
-        // This automatically supports any new language added to translations.ts in the future.
+        // Loop through all preferred languages to find the first supported one.
+        // This ensures closest match (e.g. if User has ['fr', 'es'] and we support 'es', they get 'es').
         for (const lang of languages) {
-            // Get the 2-letter code (e.g., "en-US" -> "en")
             const code = lang.split('-')[0].toLowerCase() as Language;
-
-            // Check if this language exists in our translations (excluding "en" which is default)
             if (translations[code]) {
                 return code;
             }
         }
 
-        // Default fallback
+        // Global Fallback
         return 'en';
     });
 

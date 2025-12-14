@@ -1,4 +1,4 @@
-export type Language = 'en' | 'pt';
+export type Language = 'en' | 'pt' | 'es';
 
 export type TranslationKeys = {
     // Navbar
@@ -678,6 +678,248 @@ export const translations: Record<Language, TranslationKeys> = {
             terms: "Termos",
             privacy: "Privacidade",
             support: "Suporte",
+        },
+    },
+    es: {
+        nav: {
+            howItWorks: "Cómo Funciona",
+            features: "Funcionalidades",
+            forWho: "Para Quién",
+            testimonials: "Testimonios",
+            plans: "Planes",
+            faq: "FAQ",
+            login: "Entrar",
+        },
+        hero: {
+            badge: "Cero genérico. 100% Tú.",
+            title: {
+                start: "Deja de intentar encajar en planes hechos para ",
+                highlight: '"todo el mundo"',
+                end: ".",
+            },
+            subtitle: "Obtén un protocolo de Nutrición y Entrenamiento diseñado exclusivamente para tu biología, rutina y objetivo — ya sea perder peso, definir o ganar masa muscular.",
+            cta: "Generar Mi Plan Personalizado",
+        },
+        scanner: {
+            title: {
+                start: "Escáner IA: La ",
+                highlight: "Libertad",
+                end: " de Comer Fuera",
+            },
+            subtitle: "No seas rehén del tupper. Apunta tu cámara a cualquier plato y nuestra IA te dice si encaja en tu plan. Personalización es tener libertad con control.",
+            visual: {
+                analyzing: "Analizando Comida...",
+                salmon: "Salmón a la Parrilla",
+                salmonInfo: "150g • 310 kcal",
+                salad: "Ensalada de Quinoa",
+                saladInfo: "120g • 180 kcal",
+                tapToScan: "Toca para Escanear",
+            },
+        },
+        problem: {
+            title: {
+                start: "¿Por qué las dietas de internet te ",
+                highlight: "fallan",
+                end: "?",
+            },
+            description1: "Porque no te conocen. Las apps genéricas y los PDFs de internet tratan a todos como una estadística. Ignoran que tienes dolor de rodilla, odias el brócoli o que tu metabolismo es diferente.",
+            solutionBadge: "La Solución Zintra:",
+            description2: " No \"adivinamos\" números. Nuestra Inteligencia Artificial analiza docenas de variables de tu perfil para crear el camino más corto y eficiente entre tú y tu objetivo.",
+        },
+        mechanism: {
+            header: {
+                title: {
+                    start: "Cómo Creamos el ",
+                    highlight: "Plan Perfecto",
+                },
+                subtitle: "Zintra se adapta a CUALQUIER objetivo.",
+            },
+            steps: {
+                step1: {
+                    title: "Entendemos Quién Eres",
+                    description: "No pedimos solo peso y altura. Analizamos tu rutina, nivel de estrés, experiencia de entrenamiento y preferencias alimentarias.",
+                },
+                step2: {
+                    title: "Definimos Tu Objetivo",
+                    description: "¿Quieres perder 10kg? ¿Ganar pierna? ¿Solo más salud? El algoritmo ajusta calorías e intensidad de entrenamiento para tu meta específica.",
+                },
+                step3: {
+                    title: "El Plan Cobra Vida",
+                    description: "Generamos un protocolo único. Si cambias de idea o rutina, el plan cambia contigo.",
+                },
+            },
+        },
+        features: {
+            nutrition: {
+                title: "Nutrición: El Plan Alimenticio que Funciona para TI",
+                description: "No existe la 'dieta perfecta' universal. Existe la dieta que puedes seguir de verdad. La app crea platos con alimentos que amas. ¿Quieres cambiar la cena? El sistema recalcula los macros para mantener tu objetivo intacto.",
+            },
+            workout: {
+                title: "Entrenamiento: Ingeniería Corporal Individual",
+                description: "¿Tu objetivo es hipertrofia? El entrenamiento se enfoca en carga y volumen. ¿Es pérdida de peso? El foco cambia. Seguridad Total: La única app que pregunta '¿Dónde sientes dolor?' y elimina ejercicios peligrosos para tu articulación específica.",
+            },
+            dashboard: {
+                title: "Metas Transformadas en Acciones.",
+                description: "El dashboard no muestra solo 'perder 5kg'. Te dice qué hacer HOY. Beber tus 3L de agua, cumplir la proteína y el entrenamiento. El sistema de gamificación te mantiene constante.",
+            },
+        },
+        cta: {
+            secondary1: "Quiero adelgazar comiendo lo que me gusta",
+            secondary2: "Quiero mi entrenamiento seguro y personalizado",
+        },
+        qualification: {
+            title: {
+                start: "¿Para Quién es ",
+                highlight: "Zintra",
+                end: "?",
+            },
+            subtitle: "Esta app fue hecha para ti si:",
+            items: [
+                "Quieres adelgazar, pero no renuncias a comer cosas ricas.",
+                "Tienes una rutina ajetreada y poco tiempo para planear comidas.",
+                "Tienes miedo de lesionarte con entrenamientos genéricos de internet.",
+                "Ya has intentado todo y necesitas organización y constancia.",
+            ],
+        },
+        testimonials: {
+            title: {
+                highlight: "Resultados",
+                end: " Reales.",
+            },
+            items: [
+                {
+                    quote: "Pensaba que comía bien, pero la barriga nunca se iba, ¡qué frustración! Cuando bajé Zintra, vi que me equivocaba mucho en la distribución. Soy muy visual, así que despertar y ver las 'Tareas de Hoy' para marcar ✅ me ayudó mucho con la disciplina. Fue ese control diario lo que hizo la magia y finalmente definí el abdomen.",
+                    name: "Mariana, 24",
+                    designation: "Estudiante Universitaria",
+                },
+                {
+                    quote: "Honestamente... miro la foto de antes y ni me reconozco. Estaba muy cansada, había probado esas dietas locas y siempre recuperaba el doble. Zintra fue diferente porque preguntó todo de mi vida al registrarme. Y lo que me mantuvo fue ver la 'Motivación Diaria' y mi racha de fuego crecer. Fue increíble, perdí mucho peso y esta vez fue real.",
+                    name: "Carla, 32",
+                    designation: "Representante Comercial",
+                },
+                {
+                    quote: "En serio... estaba desesperada porque mi vestido de novia no cerraba y faltaban pocos meses. La 'Consultoría Científica' que genera al inicio es real, calculó exacto. Me obsesioné con el Resumen Nutricional intentando cumplir mis metas perfecto. Ah, y tener que 'llenar el vaso' de agua en la app me ayudó mucho con la hinchazón. Entré en el vestido y me sentí maravillosa.",
+                    name: "Fernanda, 29",
+                    designation: "Arquitecta (Novia)",
+                },
+                {
+                    quote: "Con el ajetreo de la oficina y cuidando la casa, no tenía tiempo de pesar comida. El 'truco' para mí fue ese botón de 'Analizar Comida'. Estoy en el restaurante, tomo foto del plato y la app ya me dice si encaja en el plan. ¡Eso facilitó demasiado mi vida! Lo recomiendo mucho para quien tiene una vida loca.",
+                    name: "Patricia, 35",
+                    designation: "Gerente de Proyectos",
+                },
+                {
+                    quote: "Increíble. Pensaba que entrenaba pesado, pero el entrenamiento de Zintra me mostró lo que es entrenar de verdad, con las cargas y repeticiones correctas para mí. Aparte de la dieta, ver la línea del Gráfico de Peso bajando cada semana en el dashboard vicia y me mantuvo enfocada.",
+                    name: "Bruna, 27",
+                    designation: "Diseñadora (NY)",
+                },
+            ],
+        },
+        offer: {
+            title: {
+                start: "La ciencia de tu cuerpo, ",
+                highlight: "decodificada",
+                end: ".",
+            },
+            subtitle: "No pierdas más tiempo con prueba y error. Empieza hoy con un plan hecho a tu medida.",
+            button: "Empezar Ahora",
+        },
+        comparison: {
+            title: {
+                start: "Mucho más que una app. ",
+                highlight: "Mucho más barato que un Personal.",
+            },
+            subtitle: "No necesitas pagar una fortuna para adelgazar, ni arriesgar tu columna con entrenamientos genéricos.",
+            headers: {
+                zintra: "Zintra AI",
+                recommended: "RECOMENDADO",
+                personal: "Personal + Nutri",
+                generic: "Apps Genéricas / YouTube",
+            },
+            rows: {
+                investment: {
+                    feature: "Inversión Mensual",
+                    zintra: { text: "$19.90", sub: "(Accesible)" },
+                    personal: "$300+",
+                    generic: "$9.90",
+                },
+                injuries: {
+                    feature: "¿Considera dolores/lesiones?",
+                    zintra: { text: "Sí", sub: "(Protección Automática)" },
+                    personal: "Sí",
+                    generic: { text: "No", sub: "(Peligroso)" },
+                },
+                flexibility: {
+                    feature: "Flexibilidad en la Dieta",
+                    zintra: "Cambia alimentos al instante",
+                    personal: "Depende de la respuesta",
+                    generic: { text: "PDF Fijo", sub: "(Aburrido)" },
+                },
+                evolution: {
+                    feature: "Ajuste de Ruta (Evolución)",
+                    zintra: "Quincenal o Semanal",
+                    personal: "Mensual",
+                    generic: "Nunca",
+                },
+                scanner: {
+                    feature: "Escáner de Plato (Foto)",
+                    zintra: "Sí (IA Incluida)",
+                    personal: "No",
+                    generic: "No",
+                },
+            },
+        },
+        pricing: {
+            title: "Invierte en ti.",
+            description: "Elige el plan que funciona para tu rutina y tu bolsillo.",
+            basic: {
+                name: "BÁSICO",
+                description: "Perfecto para empezar la jornada",
+                button: "Empezar Ahora",
+                features: [
+                    "Plan Alimenticio con Comida Real (Económico)",
+                    "Entrenamientos en Casa o Gimnasio",
+                    "Escáner de Alimentos Ilimitado",
+                    "2 Actualizaciones de Plan/mes (Quincenal)",
+                ],
+            },
+            pro: {
+                name: "PRO",
+                description: "Para quien quiere resultados rápidos",
+                button: "Suscribir Pro",
+                features: [
+                    "4 Actualizaciones de Plan/mes (Ajuste Semanal)",
+                    "Generación de Plan Prioritaria",
+                    "Soporte Prioritario",
+                    "Todo del Plan Básico",
+                ],
+            },
+        },
+        faq: {
+            title: "Preguntas Frecuentes",
+            items: [
+                {
+                    question: "¿Cómo recibo el acceso?",
+                    answer: "El sistema crea tu usuario automáticamente tras el pago y lo envía por e-mail. Recibes tu login y contraseña en menos de 2 minutos.",
+                },
+                {
+                    question: "¿El plan alimenticio considera mis restricciones?",
+                    answer: "Sí. En la configuración inicial puedes marcar alergias (lactosa, gluten, etc) y preferencias (vegano, vegetariano). La IA nunca sugerirá algo que no puedas comer.",
+                },
+                {
+                    question: "¿Puedo cancelar en cualquier momento?",
+                    answer: "Sí. No hay permanencia en el plan mensual. Cancelas directo por la app en 'Configuraciones' sin necesitar hablar con nadie.",
+                },
+                {
+                    question: "¿Sirve para principiantes?",
+                    answer: "Con certeza. Zintra ajusta el volumen de entrenamiento y la complejidad de los ejercicios basándose en tu nivel de experiencia.",
+                },
+            ],
+        },
+        footer: {
+            rights: "© 2024 Zintra AI. Todos los derechos reservados.",
+            terms: "Términos",
+            privacy: "Privacidad",
+            support: "Soporte",
         },
     },
 };
