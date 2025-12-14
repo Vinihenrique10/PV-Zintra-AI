@@ -1,6 +1,9 @@
 import { TrendingDown, CheckCircle2, Activity, Flame, Droplets, Dumbbell } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const HeroVisual = () => {
+    const { t } = useLanguage();
+
     return (
         <div className="relative mx-auto w-full max-w-[320px] md:max-w-[350px] aspect-[9/19] bg-gray-900 rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden ring-1 ring-white/10 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
             {/* Dynamic Island / Notch */}
@@ -14,7 +17,7 @@ export const HeroVisual = () => {
                 {/* Header & Graph */}
                 <div className="pt-12 px-5 pb-6">
                     <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-white font-bold text-lg">Progress</h3>
+                        <h3 className="text-white font-bold text-lg">{t.hero.visual.progress}</h3>
                         <div className="flex items-center gap-1 text-blue-400 text-xs font-medium bg-blue-500/10 px-2 py-1 rounded-full">
                             <TrendingDown className="w-3 h-3" />
                             -4.2kg
@@ -42,10 +45,10 @@ export const HeroVisual = () => {
                         <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10">
                             <div className="flex items-center gap-2 mb-2 text-gray-400 text-xs">
                                 <Dumbbell className="w-3 h-3" />
-                                Protein
+                                {t.hero.visual.protein}
                             </div>
                             <div className="text-xl font-bold text-white mb-1">140g</div>
-                            <div className="text-[10px] text-gray-500 mb-2">Goal: 160g</div>
+                            <div className="text-[10px] text-gray-500 mb-2">{t.hero.visual.goal}: 160g</div>
                             <div className="h-1.5 bg-gray-800 rounded-full overflow-hidden">
                                 <div className="h-full w-[87%] bg-blue-500 rounded-full" />
                             </div>
@@ -54,7 +57,7 @@ export const HeroVisual = () => {
                         <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10">
                             <div className="flex items-center gap-2 mb-2 text-gray-400 text-xs">
                                 <Flame className="w-3 h-3" />
-                                Calories
+                                {t.hero.visual.calories}
                             </div>
                             <div className="text-xl font-bold text-white mb-1">2100</div>
                             <div className="text-[10px] text-gray-500 mb-2">kcal</div>
@@ -70,13 +73,13 @@ export const HeroVisual = () => {
                             <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
                                 <CheckCircle2 className="w-3.5 h-3.5" />
                             </div>
-                            <span className="text-sm text-white font-medium">Workout B: Done</span>
+                            <span className="text-sm text-white font-medium">{t.hero.visual.workoutDone}</span>
                         </div>
                         <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
                             <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
                                 <CheckCircle2 className="w-3.5 h-3.5" />
                             </div>
-                            <span className="text-sm text-white font-medium">Water 3L: Done</span>
+                            <span className="text-sm text-white font-medium">{t.hero.visual.waterDone}</span>
                         </div>
                     </div>
                 </div>

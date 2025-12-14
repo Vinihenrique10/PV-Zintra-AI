@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { Egg, Wheat, Drumstick, Utensils, RefreshCw, Flame, Droplets } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export const MealPlanVisual = () => {
+    const { t } = useLanguage();
+
     return (
         <div className="relative mx-auto w-full max-w-[320px] aspect-[9/19] bg-gray-900 rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden ring-1 ring-white/10 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
             {/* Dynamic Island / Notch */}
@@ -16,8 +19,8 @@ export const MealPlanVisual = () => {
                 <div className="pt-12 px-5 pb-6">
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h3 className="text-white font-bold text-lg leading-tight">Meal Plan</h3>
-                            <p className="text-primary text-sm font-medium">Lean Gain</p>
+                            <h3 className="text-white font-bold text-lg leading-tight">{t.features.nutrition.visual.title}</h3>
+                            <p className="text-primary text-sm font-medium">{t.features.nutrition.visual.planName}</p>
                         </div>
                         <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
                             <div className="w-4 h-4 rounded-full bg-primary" />
@@ -28,17 +31,17 @@ export const MealPlanVisual = () => {
                     <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 border border-white/10 flex justify-between items-center text-[10px] text-gray-400">
                         <div className="flex flex-col items-center">
                             <span className="text-white font-bold text-xs">250g</span>
-                            <span>Carbs</span>
+                            <span>{t.features.nutrition.visual.carbs}</span>
                         </div>
                         <div className="w-px h-6 bg-white/10" />
                         <div className="flex flex-col items-center">
                             <span className="text-primary font-bold text-xs">180g</span>
-                            <span>Prot</span>
+                            <span>{t.features.nutrition.visual.prot}</span>
                         </div>
                         <div className="w-px h-6 bg-white/10" />
                         <div className="flex flex-col items-center">
                             <span className="text-white font-bold text-xs">70g</span>
-                            <span>Fat</span>
+                            <span>{t.features.nutrition.visual.fat}</span>
                         </div>
                     </div>
                 </div>
@@ -57,7 +60,7 @@ export const MealPlanVisual = () => {
 
                         <div className="flex items-center gap-2 mb-3 text-xs text-gray-400 font-medium uppercase tracking-wider">
                             <div className="w-1.5 h-1.5 rounded-full bg-yellow-500" />
-                            Breakfast
+                            {t.features.nutrition.visual.breakfast}
                         </div>
 
                         <div className="flex items-center gap-4 mb-4">
@@ -70,8 +73,8 @@ export const MealPlanVisual = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-white font-medium text-sm">3 Whole Eggs</div>
-                                <div className="text-gray-400 text-xs">+ 50g Oatmeal</div>
+                                <div className="text-white font-medium text-sm">{t.features.nutrition.visual.breakfastItem}</div>
+                                <div className="text-gray-400 text-xs">{t.features.nutrition.visual.breakfastSub}</div>
                             </div>
                         </div>
 
@@ -95,7 +98,7 @@ export const MealPlanVisual = () => {
 
                         <div className="flex items-center gap-2 mb-3 text-xs text-gray-400 font-medium uppercase tracking-wider">
                             <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                            Lunch
+                            {t.features.nutrition.visual.lunch}
                         </div>
 
                         <div className="flex items-center gap-4 mb-4">
@@ -108,8 +111,8 @@ export const MealPlanVisual = () => {
                                 </div>
                             </div>
                             <div>
-                                <div className="text-white font-medium text-sm">150g Chicken Breast</div>
-                                <div className="text-gray-400 text-xs">+ 200g White Rice</div>
+                                <div className="text-white font-medium text-sm">{t.features.nutrition.visual.lunchItem}</div>
+                                <div className="text-gray-400 text-xs">{t.features.nutrition.visual.lunchSub}</div>
                             </div>
                         </div>
 

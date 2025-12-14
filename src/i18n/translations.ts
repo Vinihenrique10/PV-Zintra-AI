@@ -21,6 +21,14 @@ export type TranslationKeys = {
         };
         subtitle: string;
         cta: string;
+        visual: {
+            progress: string;
+            protein: string;
+            calories: string;
+            goal: string;
+            workoutDone: string;
+            waterDone: string;
+        };
     };
     // Scanner Section
     scanner: {
@@ -76,14 +84,50 @@ export type TranslationKeys = {
         nutrition: {
             title: string;
             description: string;
+            visual: {
+                title: string;
+                planName: string;
+                carbs: string;
+                prot: string;
+                fat: string;
+                breakfast: string;
+                breakfastItem: string;
+                breakfastSub: string;
+                lunch: string;
+                lunchItem: string;
+                lunchSub: string;
+            };
         };
         workout: {
             title: string;
             description: string;
+            visual: {
+                title: string;
+                focus: string;
+                protection: string;
+                exercise1: string;
+                reps1: string;
+                weight: string;
+                rest: string;
+                exercise2: string;
+                reps2: string;
+                exercise3: string;
+                reps3: string;
+            };
         };
         dashboard: {
             title: string;
             description: string;
+            visual: {
+                title: string;
+                focus: string;
+                weightTitle: string;
+                streak: string;
+                adherence: string;
+                milestoneTitle: string;
+                milestoneName: string;
+                milestoneSub: string;
+            };
         };
     };
     cta: {
@@ -213,8 +257,16 @@ export const translations: Record<Language, TranslationKeys> = {
                 highlight: '"everyone"',
                 end: ".",
             },
-            subtitle: "Get a Nutrition and Workout protocol designed exclusively for your biology, your routine, and your goal — whether it's losing weight, getting lean, or building muscle.",
-            cta: "Generate My Personalized Plan",
+            subtitle: "Get a Nutrition and Workout protocol designed exclusively for your biology, routine, and goal — whether it's weight loss, getting shredded, or gaining muscle.",
+            cta: "Generate My Custom Plan",
+            visual: {
+                progress: "Progress",
+                protein: "Protein",
+                calories: "Calories",
+                goal: "Goal",
+                workoutDone: "Workout B: Done",
+                waterDone: "Water 3L: Done",
+            },
         },
         scanner: {
             title: {
@@ -240,7 +292,7 @@ export const translations: Record<Language, TranslationKeys> = {
             },
             description1: "Because they don't know you. Generic apps and internet PDFs treat everyone as a statistic. They ignore that you have knee pain, hate broccoli, or that your metabolism is different.",
             solutionBadge: "The Zintra Solution:",
-            description2: " We don't \"guess\" numbers. Our Artificial Intelligence analyzes dozens of variables from your profile to create the shortest and most efficient path between you and your goal.",
+            description2: " We don't \"guess\" numbers. Our Artificial Intelligence analyzes dozens of variables from your profile to create the shortest and efficient path between you and your goal.",
         },
         mechanism: {
             header: {
@@ -267,16 +319,52 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         features: {
             nutrition: {
-                title: "Nutrition: The Meal Plan that Works for YOU",
-                description: "There's no universal 'perfect diet'. There's the diet you can actually follow. The app creates meals with foods you love. Want to swap dinner? The system recalculates macros to keep your goal intact.",
+                title: "Nutrition: The Diet Plan That Works for YOU",
+                description: "There is no universal 'perfect diet'. There is the diet you can actually stick to. The app builds meals with foods you love. Want to switch dinner? The system recalculates macros to keep your goal intact.",
+                visual: {
+                    title: "Meal Plan",
+                    planName: "Lean Gain",
+                    carbs: "Carbs",
+                    prot: "Prot",
+                    fat: "Fat",
+                    breakfast: "Breakfast",
+                    breakfastItem: "3 Whole Eggs",
+                    breakfastSub: "+ 50g Oatmeal",
+                    lunch: "Lunch",
+                    lunchItem: "150g Chicken Breast",
+                    lunchSub: "+ 200g White Rice",
+                },
             },
             workout: {
                 title: "Workout: Individual Body Engineering",
-                description: "Is your goal muscle building? The workout focuses on load and volume. Is it weight loss? The focus changes. Total Safety: The only app that asks 'Where do you feel pain?' and removes dangerous exercises for your specific joint.",
+                description: "Is your goal hypertrophy? Training focuses on load and volume. Weight loss? The focus shifts. Total Safety: The only app that asks 'Where do you have pain?' and removes dangerous exercises for your specific joint.",
+                visual: {
+                    title: "Workout A",
+                    focus: "Lower Body (Quad Focus)",
+                    protection: "Joint Protection: Active",
+                    exercise1: "Barbell Squat",
+                    reps1: "4 Sets x 10-12 Reps",
+                    weight: "Weight",
+                    rest: "Rest",
+                    exercise2: "Leg Press 45º",
+                    reps2: "3 Sets x 12-15 Reps",
+                    exercise3: "Leg Extension",
+                    reps3: "3 Sets x 15 Reps",
+                },
             },
             dashboard: {
                 title: "Goals Transformed into Actions.",
-                description: "The dashboard doesn't just show 'lose 10lbs'. It tells you what to do TODAY. Drink your 3L of water, hit your protein, and complete your workout. The gamification system keeps you consistent.",
+                description: "The dashboard doesn't just show 'lose 10lbs'. It tells you what to do TODAY. Drink your 3L of water, hit your protein, and do your workout. The gamification system keeps you consistent.",
+                visual: {
+                    title: "My Goals",
+                    focus: "Focus: Weight Loss",
+                    weightTitle: "Current Weight",
+                    streak: "Day Streak",
+                    adherence: "Adherence",
+                    milestoneTitle: "Next Milestone",
+                    milestoneName: "Lose 10lbs",
+                    milestoneSub: "1.8lbs to go",
+                },
             },
         },
         cta: {
@@ -455,8 +543,16 @@ export const translations: Record<Language, TranslationKeys> = {
                 highlight: '"todo mundo"',
                 end: ".",
             },
-            subtitle: "Tenha um protocolo de Nutrição e Treino desenhado exclusivamente para sua biologia, sua rotina e seu objetivo — seja emagrecer, definir ou ganhar massa muscular.",
+            subtitle: "Obtenha um protocolo de Nutrição e Treino desenhado exclusivamente para sua biologia, rotina e objetivo — seja emagrecer, definir ou ganhar massa.",
             cta: "Gerar Meu Plano Personalizado",
+            visual: {
+                progress: "Progresso",
+                protein: "Proteína",
+                calories: "Calorias",
+                goal: "Meta",
+                workoutDone: "Treino B: Feito",
+                waterDone: "Água 3L: Feito",
+            },
         },
         scanner: {
             title: {
@@ -509,16 +605,52 @@ export const translations: Record<Language, TranslationKeys> = {
         },
         features: {
             nutrition: {
-                title: "Nutrição: O Plano Alimentar que Funciona pra VOCÊ",
-                description: "Não existe 'dieta perfeita' universal. Existe a dieta que você consegue seguir. O app monta pratos com alimentos que você ama. Quer trocar o jantar? O sistema recalcula os macros para manter seu objetivo intacto.",
+                title: "Nutrição: O Plano Alimentar que Funciona para VOCÊ",
+                description: "Não existe a 'dieta perfeita' universal. Existe a dieta que você consegue seguir de verdade. O app monta pratos com alimentos que você ama. Quer trocar o jantar? O sistema recalcula os macros para manter seu objetivo intacto.",
+                visual: {
+                    title: "Plano Alimentar",
+                    planName: "Ganho Limpo",
+                    carbs: "Carb",
+                    prot: "Prot",
+                    fat: "Gord",
+                    breakfast: "Café da Manhã",
+                    breakfastItem: "3 Ovos Inteiros",
+                    breakfastSub: "+ 50g Aveia",
+                    lunch: "Almoço",
+                    lunchItem: "150g Peito de Frango",
+                    lunchSub: "+ 200g Arroz Branco",
+                },
             },
             workout: {
                 title: "Treino: Engenharia Corporal Individual",
-                description: "Seu objetivo é hipertrofia? O treino foca em carga e volume. É emagrecimento? O foco muda. Segurança Total: O único app que pergunta 'Onde você sente dor?' e remove exercícios perigosos para sua articulação específica.",
+                description: "Seu objetivo é hipertrofia? O treino foca em carga e volume. É emagrecimento? O foco muda. Segurança Total: O único app que pergunta 'Onde você tem dor?' e remove exercícios perigosos para sua articulação específica.",
+                visual: {
+                    title: "Treino A",
+                    focus: "Membros Inf. (Foco Quadríceps)",
+                    protection: "Proteção Articular: Ativa",
+                    exercise1: "Agachamento Barra",
+                    reps1: "4 Séries x 10-12 Reps",
+                    weight: "Carga",
+                    rest: "Descanso",
+                    exercise2: "Leg Press 45º",
+                    reps2: "3 Séries x 12-15 Reps",
+                    exercise3: "Cadeira Extensora",
+                    reps3: "3 Séries x 15 Reps",
+                },
             },
             dashboard: {
                 title: "Metas Transformadas em Ações.",
-                description: "O dashboard não mostra apenas 'perder 5kg'. Ele diz o que fazer HOJE. Beber seus 3L de água, bater a proteína e cumprir o treino. O sistema de gamificação te mantém constante.",
+                description: "O dashboard não mostra apenas 'perder 5kg'. Ele te diz o que fazer HOJE. Beber seus 3L de água, bater a proteína e fazer o treino. O sistema de gamificação te mantém constante.",
+                visual: {
+                    title: "Minhas Metas",
+                    focus: "Foco: Perda de Peso",
+                    weightTitle: "Peso Atual",
+                    streak: "Sequência",
+                    adherence: "Aderência",
+                    milestoneTitle: "Próximo Marco",
+                    milestoneName: "Perder 5kg",
+                    milestoneSub: "0.8kg restante",
+                },
             },
         },
         cta: {
@@ -699,6 +831,14 @@ export const translations: Record<Language, TranslationKeys> = {
             },
             subtitle: "Obtén un protocolo de Nutrición y Entrenamiento diseñado exclusivamente para tu biología, rutina y objetivo — ya sea perder peso, definir o ganar masa muscular.",
             cta: "Generar Mi Plan Personalizado",
+            visual: {
+                progress: "Progreso",
+                protein: "Proteína",
+                calories: "Calorías",
+                goal: "Meta",
+                workoutDone: "Entrenamiento B: Hecho",
+                waterDone: "Agua 3L: Hecho",
+            },
         },
         scanner: {
             title: {
@@ -753,14 +893,50 @@ export const translations: Record<Language, TranslationKeys> = {
             nutrition: {
                 title: "Nutrición: El Plan Alimenticio que Funciona para TI",
                 description: "No existe la 'dieta perfecta' universal. Existe la dieta que puedes seguir de verdad. La app crea platos con alimentos que amas. ¿Quieres cambiar la cena? El sistema recalcula los macros para mantener tu objetivo intacto.",
+                visual: {
+                    title: "Plan Alimenticio",
+                    planName: "Ganancia Limpia",
+                    carbs: "Carb",
+                    prot: "Prot",
+                    fat: "Grasa",
+                    breakfast: "Desayuno",
+                    breakfastItem: "3 Huevos Enteros",
+                    breakfastSub: "+ 50g Avena",
+                    lunch: "Almuerzo",
+                    lunchItem: "150g Pechuga de Pollo",
+                    lunchSub: "+ 200g Arroz Blanco",
+                },
             },
             workout: {
                 title: "Entrenamiento: Ingeniería Corporal Individual",
                 description: "¿Tu objetivo es hipertrofia? El entrenamiento se enfoca en carga y volumen. ¿Es pérdida de peso? El foco cambia. Seguridad Total: La única app que pregunta '¿Dónde sientes dolor?' y elimina ejercicios peligrosos para tu articulación específica.",
+                visual: {
+                    title: "Entrenamiento A",
+                    focus: "Miembros Inf. (Enfoque Cuádriceps)",
+                    protection: "Protección Articular: Activa",
+                    exercise1: "Sentadilla con Barra",
+                    reps1: "4 Series x 10-12 Reps",
+                    weight: "Carga",
+                    rest: "Descanso",
+                    exercise2: "Prensa de Piernas 45º",
+                    reps2: "3 Series x 12-15 Reps",
+                    exercise3: "Extensión de Piernas",
+                    reps3: "3 Series x 15 Reps",
+                },
             },
             dashboard: {
                 title: "Metas Transformadas en Acciones.",
                 description: "El dashboard no muestra solo 'perder 5kg'. Te dice qué hacer HOY. Beber tus 3L de agua, cumplir la proteína y el entrenamiento. El sistema de gamificación te mantiene constante.",
+                visual: {
+                    title: "Mis Metas",
+                    focus: "Enfoque: Pérdida de Peso",
+                    weightTitle: "Peso Actual",
+                    streak: "Racha",
+                    adherence: "Adherencia",
+                    milestoneTitle: "Próximo Hito",
+                    milestoneName: "Perder 5kg",
+                    milestoneSub: "0.8kg restante",
+                },
             },
         },
         cta: {
@@ -941,6 +1117,14 @@ export const translations: Record<Language, TranslationKeys> = {
             },
             subtitle: "Erhalte ein Ernährungs- und Trainingsprotokoll, das exklusiv für deine Biologie, deine Routine und dein Ziel entwickelt wurde — sei es Abnehmen, Definieren oder Muskelaufbau.",
             cta: "Meinen personalisierten Plan erstellen",
+            visual: {
+                progress: "Fortschritt",
+                protein: "Protein",
+                calories: "Kalorien",
+                goal: "Ziel",
+                workoutDone: "Training B: Fertig",
+                waterDone: "Wasser 3L: Fertig",
+            },
         },
         scanner: {
             title: {
@@ -995,14 +1179,50 @@ export const translations: Record<Language, TranslationKeys> = {
             nutrition: {
                 title: "Ernährung: Der Ernährungsplan, der für DICH funktioniert",
                 description: "Es gibt keine universelle 'perfekte Diät'. Es gibt nur die Diät, die du tatsächlich durchhalten kannst. Die App erstellt Gerichte mit Lebensmitteln, die du liebst. Willst du das Abendessen tauschen? Das System berechnet die Makros neu, um dein Ziel intakt zu halten.",
+                visual: {
+                    title: "Ernährungsplan",
+                    planName: "Lean Gain",
+                    carbs: "Kohlenhydrate",
+                    prot: "Prot",
+                    fat: "Fett",
+                    breakfast: "Frühstück",
+                    breakfastItem: "3 Ganze Eier",
+                    breakfastSub: "+ 50g Haferflocken",
+                    lunch: "Mittagessen",
+                    lunchItem: "150g Hähnchenbrust",
+                    lunchSub: "+ 200g Weißer Reis",
+                },
             },
             workout: {
                 title: "Training: Individuelle Körper-Ingenieurskunst",
                 description: "Ist dein Ziel Hypertrophie? Das Training konzentriert sich auf Last und Volumen. Ist es Gewichtsverlust? Der Fokus ändert sich. Totale Sicherheit: Die einzige App, die fragt 'Wo hast du Schmerzen?' und gefährliche Übungen für dein spezifisches Gelenk entfernt.",
+                visual: {
+                    title: "Training A",
+                    focus: "Unterkörper (Quad-Fokus)",
+                    protection: "Gelenkschutz: Aktiv",
+                    exercise1: "Langhantel-Kniebeuge",
+                    reps1: "4 Sätze x 10-12 Wh",
+                    weight: "Gewicht",
+                    rest: "Pause",
+                    exercise2: "Beinpresse 45º",
+                    reps2: "3 Sätze x 12-15 Wh",
+                    exercise3: "Beinstrecken",
+                    reps3: "3 Sätze x 15 Wh",
+                },
             },
             dashboard: {
                 title: "Ziele in Aktionen verwandelt.",
                 description: "Das Dashboard zeigt nicht nur '5kg verlieren'. Es sagt dir, was du HEUTE tun musst. Trink deine 3L Wasser, triff dein Protein-Ziel und absolviere dein Training. Das Gamification-System hält dich konstant dabei.",
+                visual: {
+                    title: "Meine Ziele",
+                    focus: "Fokus: Gewichtsverlust",
+                    weightTitle: "Aktuelles Gewicht",
+                    streak: "Tages-Serie",
+                    adherence: "Einhaltung",
+                    milestoneTitle: "Nächster Meilenstein",
+                    milestoneName: "5kg verlieren",
+                    milestoneSub: "noch 0.8kg",
+                },
             },
         },
         cta: {
@@ -1183,6 +1403,14 @@ export const translations: Record<Language, TranslationKeys> = {
             },
             subtitle: "Obtenez un protocole de Nutrition et d'Entraînement conçu exclusivement pour votre biologie, votre routine et votre objectif — que ce soit perdre du poids, sécher ou prendre du muscle.",
             cta: "Générer Mon Plan Personnalisé",
+            visual: {
+                progress: "Progrès",
+                protein: "Protéine",
+                calories: "Calories",
+                goal: "Objectif",
+                workoutDone: "Entraînement B : Fait",
+                waterDone: "Eau 3L : Fait",
+            },
         },
         scanner: {
             title: {
@@ -1237,14 +1465,50 @@ export const translations: Record<Language, TranslationKeys> = {
             nutrition: {
                 title: "Nutrition : Le Plan Alimentaire qui Marche pour VOUS",
                 description: "Il n'y a pas de 'régime parfait' universel. Il y a le régime que vous pouvez réellement suivre. L'app crée des plats avec des aliments que vous aimez. Vous voulez changer le dîner ? Le système recalcule les macros pour garder votre objectif intact.",
+                visual: {
+                    title: "Plan Alimentaire",
+                    planName: "Gain Sec",
+                    carbs: "Glucides",
+                    prot: "Prot",
+                    fat: "Gras",
+                    breakfast: "Petit Déjeuner",
+                    breakfastItem: "3 Œufs Entiers",
+                    breakfastSub: "+ 50g Avoine",
+                    lunch: "Déjeuner",
+                    lunchItem: "150g Blanc de Poulet",
+                    lunchSub: "+ 200g Riz Blanc",
+                },
             },
             workout: {
                 title: "Entraînement : Ingénierie Corporelle Individuelle",
                 description: "Votre objectif est l'hypertrophie ? L'entraînement se concentre sur la charge et le volume. Perte de poids ? Le focus change. Sécurité Totale : La seule app qui demande 'Où avez-vous mal ?' et retire les exercices dangereux pour votre articulation spécifique.",
+                visual: {
+                    title: "Entraînement A",
+                    focus: "Bas du Corps (Focus Quads)",
+                    protection: "Protection Articulaire : Active",
+                    exercise1: "Squat Barre",
+                    reps1: "4 Séries x 10-12 Reps",
+                    weight: "Poids",
+                    rest: "Repos",
+                    exercise2: "Presse à Cuisses 45º",
+                    reps2: "3 Séries x 12-15 Reps",
+                    exercise3: "Extension Jambes",
+                    reps3: "3 Séries x 15 Reps",
+                },
             },
             dashboard: {
                 title: "Objectifs Transformés en Actions.",
                 description: "Le tableau de bord ne montre pas juste 'perdre 5kg'. Il vous dit quoi faire AUJOURD'HUI. Boire vos 3L d'eau, atteindre votre protéine et faire votre entraînement. Le système de gamification vous garde constant.",
+                visual: {
+                    title: "Mes Objectifs",
+                    focus: "Focus : Perte de Poids",
+                    weightTitle: "Poids Actuel",
+                    streak: "Série",
+                    adherence: "Adhérence",
+                    milestoneTitle: "Prochaine Étape",
+                    milestoneName: "Perdre 5kg",
+                    milestoneSub: "0.8kg restant",
+                },
             },
         },
         cta: {
@@ -1425,6 +1689,14 @@ export const translations: Record<Language, TranslationKeys> = {
             },
             subtitle: "Ottieni un protocollo di Nutrizione e Allenamento progettato esclusivamente per la tua biologia, routine e obiettivo — che sia dimagrire, definire o mettere massa.",
             cta: "Genera Il Mio Piano Personalizzato",
+            visual: {
+                progress: "Progresso",
+                protein: "Proteine",
+                calories: "Calorie",
+                goal: "Obiettivo",
+                workoutDone: "Allenamento B: Fatto",
+                waterDone: "Acqua 3L: Fatto",
+            },
         },
         scanner: {
             title: {
@@ -1479,14 +1751,50 @@ export const translations: Record<Language, TranslationKeys> = {
             nutrition: {
                 title: "Nutrizione: Il Piano che Funziona per TE",
                 description: "Non esiste la dieta perfetta universale. L'app crea piatti che ami. Vuoi cambiare cena? Il sistema ricalcola i macro.",
+                visual: {
+                    title: "Piano Alimentare",
+                    planName: "Massa Pulita",
+                    carbs: "Carb",
+                    prot: "Prot",
+                    fat: "Grassi",
+                    breakfast: "Colazione",
+                    breakfastItem: "3 Uova Intere",
+                    breakfastSub: "+ 50g Avena",
+                    lunch: "Pranzo",
+                    lunchItem: "150g Petto di Pollo",
+                    lunchSub: "+ 200g Riso Bianco",
+                },
             },
             workout: {
                 title: "Allenamento: Ingegneria Corporea",
                 description: "Ipertrofia o dimagrimento? Sicurezza Totale: L'unica app che chiede 'Dove hai dolore?' ed elimina esercizi pericolosi.",
+                visual: {
+                    title: "Allenamento A",
+                    focus: "Parte Inf. (Focus Quadricipiti)",
+                    protection: "Protezione Articolare: Attiva",
+                    exercise1: "Squat Bilanciere",
+                    reps1: "4 Serie x 10-12 Reps",
+                    weight: "Peso",
+                    rest: "Riposo",
+                    exercise2: "Leg Press 45º",
+                    reps2: "3 Serie x 12-15 Reps",
+                    exercise3: "Leg Extension",
+                    reps3: "3 Serie x 15 Reps",
+                },
             },
             dashboard: {
                 title: "Obiettivi Trasformati in Azioni.",
                 description: "Il dashboard ti dice cosa fare OGGI. Bere acqua, proteine e allenamento. La gamification ti mantiene costante.",
+                visual: {
+                    title: "I Miei Obiettivi",
+                    focus: "Focus: Dimagrimento",
+                    weightTitle: "Peso Attuale",
+                    streak: "Serie",
+                    adherence: "Aderenza",
+                    milestoneTitle: "Prossimo Traguardo",
+                    milestoneName: "Perdere 5kg",
+                    milestoneSub: "0.8kg rimanenti",
+                },
             },
         },
         cta: {
