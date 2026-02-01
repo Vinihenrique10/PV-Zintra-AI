@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/MagneticButton';
 import { cn } from '../lib/utils';
+import { ArrowRight } from 'lucide-react';
 
 interface SecondaryCTAProps {
     text: string;
@@ -8,7 +9,7 @@ interface SecondaryCTAProps {
     variant?: 'primary' | 'outline';
 }
 
-export const SecondaryCTA = ({ text, className, variant = 'outline' }: SecondaryCTAProps) => {
+export const SecondaryCTA = ({ text, className }: SecondaryCTAProps) => {
     const scrollToPricing = () => {
         const pricingSection = document.getElementById('pricing');
         if (pricingSection) {
@@ -18,21 +19,20 @@ export const SecondaryCTA = ({ text, className, variant = 'outline' }: Secondary
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={cn("w-full flex justify-center py-12", className)}
+            className={cn("w-full flex justify-center py-16", className)}
         >
             <Button
                 onClick={scrollToPricing}
-                variant={variant}
-                className={cn(
-                    "group text-sm md:text-base px-6 py-4 md:px-8 md:py-6 h-auto transition-all duration-300",
-                    variant === 'outline' && "border-primary/50 text-primary hover:bg-primary/10 hover:border-primary hover:scale-105 shadow-[0_0_20px_rgba(59,130,246,0.1)]",
-                    variant === 'primary' && "bg-primary text-white hover:bg-primary/90 hover:scale-105 shadow-[0_0_30px_rgba(59,130,246,0.3)]"
-                )}
+                size="lg"
+                className="w-full sm:w-auto"
             >
-                {text}
+                <span className="flex items-center gap-3 text-lg font-bold tracking-wide uppercase">
+                    {text}
+                    <ArrowRight className="w-5 h-5" />
+                </span>
             </Button>
         </motion.div>
     );

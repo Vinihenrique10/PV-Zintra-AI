@@ -6,29 +6,29 @@ export const MealPlanVisual = () => {
     const { t } = useLanguage();
 
     return (
-        <div className="relative mx-auto w-full max-w-[320px] aspect-[9/19] bg-gray-900 rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden ring-1 ring-white/10 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500">
+        <div className="relative mx-auto w-full max-w-[320px] aspect-[9/19] bg-[#050505] rounded-[2.5rem] border-[6px] border-[#1a1a1a] shadow-2xl overflow-hidden ring-1 ring-white/5 transform rotate-[-5deg] hover:rotate-0 transition-transform duration-500 font-sans group">
             {/* Dynamic Island / Notch */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-2xl z-20" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-7 bg-black rounded-b-xl z-20" />
 
             {/* Screen Content */}
-            <div className="w-full h-full bg-[#0B0F19] flex flex-col relative overflow-hidden">
+            <div className="w-full h-full bg-[#050505] flex flex-col relative overflow-hidden">
                 {/* Background Gradients */}
-                <div className="absolute top-0 left-0 w-full h-1/2 bg-primary/10 blur-[80px] pointer-events-none" />
+                <div className="absolute top-0 left-0 w-full h-1/2 bg-primary/5 blur-[80px] pointer-events-none" />
 
                 {/* Header */}
                 <div className="pt-12 px-5 pb-6">
                     <div className="flex justify-between items-start mb-4">
                         <div>
-                            <h3 className="text-white font-bold text-lg leading-tight">{t.features.nutrition.visual.title}</h3>
-                            <p className="text-primary text-sm font-medium">{t.features.nutrition.visual.planName}</p>
+                            <h3 className="text-white font-bold text-lg leading-tight tracking-tight">{t.features.nutrition.visual.title}</h3>
+                            <p className="text-primary text-sm font-medium tracking-wide uppercase">{t.features.nutrition.visual.planName}</p>
                         </div>
-                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                            <div className="w-4 h-4 rounded-full bg-primary" />
+                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center border border-white/5">
+                            <div className="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_var(--color-primary)]" />
                         </div>
                     </div>
 
                     {/* Daily Summary Bar */}
-                    <div className="bg-white/5 backdrop-blur-md rounded-xl p-3 border border-white/10 flex justify-between items-center text-[10px] text-gray-400">
+                    <div className="bg-white/5 backdrop-blur-md rounded-lg p-3 border border-white/5 flex justify-between items-center text-[10px] text-gray-400">
                         <div className="flex flex-col items-center">
                             <span className="text-white font-bold text-xs">250g</span>
                             <span>{t.features.nutrition.visual.carbs}</span>
@@ -52,7 +52,7 @@ export const MealPlanVisual = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 relative overflow-hidden group"
+                        className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/5 relative overflow-hidden group hover:bg-white/10 transition-colors"
                     >
                         <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100 transition-opacity">
                             <RefreshCw className="w-4 h-4 text-primary" />
@@ -65,20 +65,20 @@ export const MealPlanVisual = () => {
 
                         <div className="flex items-center gap-4 mb-4">
                             <div className="flex -space-x-2">
-                                <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-[#0B0F19] flex items-center justify-center text-yellow-500">
+                                <div className="w-10 h-10 rounded-full bg-[#111] border-2 border-[#050505] flex items-center justify-center text-yellow-500">
                                     <Egg className="w-5 h-5" />
                                 </div>
-                                <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-[#0B0F19] flex items-center justify-center text-amber-200">
+                                <div className="w-10 h-10 rounded-full bg-[#111] border-2 border-[#050505] flex items-center justify-center text-amber-200">
                                     <Wheat className="w-5 h-5" />
                                 </div>
                             </div>
                             <div>
                                 <div className="text-white font-medium text-sm">{t.features.nutrition.visual.breakfastItem}</div>
-                                <div className="text-gray-400 text-xs">{t.features.nutrition.visual.breakfastSub}</div>
+                                <div className="text-gray-500 text-xs">{t.features.nutrition.visual.breakfastSub}</div>
                             </div>
                         </div>
 
-                        <div className="flex gap-3 text-[10px] font-mono text-gray-500 bg-black/20 p-2 rounded-lg">
+                        <div className="flex gap-3 text-[10px] font-mono text-gray-500 bg-black/40 p-2 rounded-md border border-white/5">
                             <span>P: <span className="text-gray-300">24g</span></span>
                             <span>C: <span className="text-gray-300">30g</span></span>
                             <span>G: <span className="text-gray-300">15g</span></span>
@@ -90,7 +90,7 @@ export const MealPlanVisual = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="bg-white/5 backdrop-blur-md rounded-2xl p-4 border border-white/10 relative overflow-hidden group"
+                        className="bg-white/5 backdrop-blur-md rounded-xl p-4 border border-white/5 relative overflow-hidden group hover:bg-white/10 transition-colors"
                     >
                         <div className="absolute top-0 right-0 p-3 opacity-50 group-hover:opacity-100 transition-opacity">
                             <RefreshCw className="w-4 h-4 text-primary" />
@@ -103,20 +103,20 @@ export const MealPlanVisual = () => {
 
                         <div className="flex items-center gap-4 mb-4">
                             <div className="flex -space-x-2">
-                                <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-[#0B0F19] flex items-center justify-center text-orange-300">
+                                <div className="w-10 h-10 rounded-full bg-[#111] border-2 border-[#050505] flex items-center justify-center text-orange-300">
                                     <Drumstick className="w-5 h-5" />
                                 </div>
-                                <div className="w-10 h-10 rounded-full bg-gray-800 border-2 border-[#0B0F19] flex items-center justify-center text-white">
+                                <div className="w-10 h-10 rounded-full bg-[#111] border-2 border-[#050505] flex items-center justify-center text-white">
                                     <Utensils className="w-5 h-5" />
                                 </div>
                             </div>
                             <div>
                                 <div className="text-white font-medium text-sm">{t.features.nutrition.visual.lunchItem}</div>
-                                <div className="text-gray-400 text-xs">{t.features.nutrition.visual.lunchSub}</div>
+                                <div className="text-gray-500 text-xs">{t.features.nutrition.visual.lunchSub}</div>
                             </div>
                         </div>
 
-                        <div className="flex gap-3 text-[10px] font-mono text-gray-500 bg-black/20 p-2 rounded-lg">
+                        <div className="flex gap-3 text-[10px] font-mono text-gray-500 bg-black/40 p-2 rounded-md border border-white/5">
                             <span>P: <span className="text-gray-300">45g</span></span>
                             <span>C: <span className="text-gray-300">56g</span></span>
                             <span>G: <span className="text-gray-300">5g</span></span>
@@ -125,15 +125,15 @@ export const MealPlanVisual = () => {
                 </div>
 
                 {/* Bottom Nav */}
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#0B0F19]/80 backdrop-blur-lg border-t border-white/5 flex justify-around items-center px-6 z-10">
-                    <div className="flex flex-col items-center gap-1 opacity-50">
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-[#050505]/90 backdrop-blur-lg border-t border-white/5 flex justify-around items-center px-6 z-10">
+                    <div className="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
                         <Flame className="w-5 h-5" />
                     </div>
                     <div className="flex flex-col items-center gap-1 text-primary">
-                        <Utensils className="w-5 h-5" />
-                        <div className="w-1 h-1 rounded-full bg-primary" />
+                        <Utensils className="w-5 h-5 shadow-[0_0_15px_var(--color-primary)]" />
+                        <div className="w-1 h-1 rounded-full bg-primary mt-1" />
                     </div>
-                    <div className="flex flex-col items-center gap-1 opacity-50">
+                    <div className="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
                         <Droplets className="w-5 h-5" />
                     </div>
                 </div>

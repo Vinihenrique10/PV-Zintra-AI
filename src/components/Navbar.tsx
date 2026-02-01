@@ -8,6 +8,7 @@ export const Navbar = () => {
     const { scrollY } = useScroll();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("");
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         setIsScrolled(latest > 50);
@@ -15,6 +16,7 @@ export const Navbar = () => {
 
     const scrollToSection = (id: string) => {
         setIsMobileMenuOpen(false);
+        setActiveSection(id);
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -38,33 +40,28 @@ export const Navbar = () => {
                     y: isScrolled ? 20 : 0,
                     opacity: 1,
                     width: isScrolled ? "min(90%, 800px)" : "100%",
-                    borderRadius: isScrolled ? "9999px" : "0px",
-                    backgroundColor: isScrolled || isMobileMenuOpen ? "rgba(5, 5, 5, 0.8)" : "transparent",
-                    borderColor: isScrolled ? "rgba(255, 255, 255, 0.1)" : "transparent",
-                    padding: isScrolled ? "0.75rem 1.5rem" : "1.5rem 3rem",
                 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                style={{
-                    backdropFilter: isScrolled || isMobileMenuOpen ? "blur(12px)" : "blur(0px)",
-                    borderWidth: "1px",
-                    borderStyle: "solid",
-                }}
-                className="fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-between items-center"
+                transition={{ duration: 0.4, type: "spring", bounce: 0, damping: 20 }}
+                className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-between items-center transition-all duration-300 ${isScrolled
+                        ? "bg-[#050505]/70 backdrop-blur-xl border border-white/5 rounded-full px-6 py-3 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+                        : "bg-transparent px-6 md:px-12 py-6"
+                    }`}
             >
                 <motion.div
-                    className="text-2xl font-bold tracking-tighter cursor-pointer"
+                    className="text-2xl font-bold tracking-tighter cursor-pointer flex items-center gap-1 font-display"
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 >
-                    Zintra<span className="text-primary">.AI</span>
+                    Zintra<span className="text-primary text-3xl leading-none">.</span>AI
                 </motion.div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-1 bg-white/5 rounded-full px-1.5 py-1.5 border border-white/5">
                     {navLinks.map((link) => (
                         <button
                             key={link.name}
                             onClick={() => scrollToSection(link.id)}
-                            className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+                            className={`relative px-4 py-1.5 text-sm font-medium transition-all duration-300 rounded-full hover:text-white ${activeSection === link.id ? "text-black bg-primary" : "text-gray-400"
+                                }`}
                         >
                             {link.name}
                         </button>
@@ -76,9 +73,9 @@ export const Navbar = () => {
                         href="https://app.zintraai.com/"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className={`hidden md:block px-6 py-2 rounded-full transition-colors text-sm font-medium ${isScrolled
-                            ? "bg-white text-black hover:bg-gray-200"
-                            : "border border-white/10 hover:bg-white/5"
+                        className={`hidden md:flex items-center justify-center px-6 py-2.5 rounded-full transition-all duration-300 text-sm font-bold tracking-wide ${isScrolled
+                            ? "bg-white text-black hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                            : "bg-white/10 border border-white/10 hover:bg-white/20 text-white backdrop-blur-sm"
                             }`}
                     >
                         {t.nav.login}
@@ -86,7 +83,7 @@ export const Navbar = () => {
 
                     {/* Mobile Menu Toggle */}
                     <button
-                        className="md:hidden text-white"
+                        className="md:hidden text-white p-2"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
                         {isMobileMenuOpen ? <X /> : <Menu />}
@@ -98,27 +95,34 @@ export const Navbar = () => {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-0 z-40 bg-black/95 pt-32 px-6 md:hidden"
+                        initial={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
+                        animate={{ opacity: 1, clipPath: "circle(150% at 100% 0)" }}
+                        exit={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
+                        transition={{ duration: 0.5, ease: "circIn" }}
+                        className="fixed inset-0 z-40 bg-black/95 pt-32 px-6 md:hidden backdrop-blur-3xl"
                     >
                         <div className="flex flex-col items-center gap-8">
-                            {navLinks.map((link) => (
-                                <button
+                            {navLinks.map((link, index) => (
+                                <motion.button
                                     key={link.name}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 + index * 0.1 }}
                                     onClick={() => scrollToSection(link.id)}
-                                    className="text-2xl font-medium text-white hover:text-primary transition-colors"
+                                    className="text-3xl font-bold text-white hover:text-primary transition-colors font-display tracking-tight"
                                 >
                                     {link.name}
-                                </button>
+                                </motion.button>
                             ))}
-                            <a
+                            <motion.a
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.5 }}
                                 href="https://app.zintraai.com/"
-                                className="mt-8 px-8 py-3 rounded-full bg-white text-black font-bold text-lg"
+                                className="mt-8 px-10 py-4 rounded-full bg-primary text-black font-bold text-lg shadow-[0_0_30px_rgba(212,255,0,0.4)]"
                             >
                                 {t.nav.login}
-                            </a>
+                            </motion.a>
                         </div>
                     </motion.div>
                 )}

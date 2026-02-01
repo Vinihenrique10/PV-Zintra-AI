@@ -1,0 +1,36 @@
+# Diário de Bordo - Desenvolvimento Zintra AI
+
+## Data: 01 de Fevereiro de 2026
+**Objetivo da Sessão:** Otimização da interface (UI/UX), padronização de botões e melhorias na responsividade móvel da Landing Page.
+
+### 1. Padronização de Botões (Design System)
+- **Componente Central:** Adotação universal do componente `MagneticButton.tsx` (estilo "Acid Lime" com efeitos de vidro/glitch) como padrão para todas as chamadas de ação (CTAs).
+- **Remoção de Estilos CSS Isolados:** Substituição de botões estilizados manualmente (`<a>` tags com classes Tailwind) pelo componente React oficial nas seções:
+  - `OfferSection`
+  - `SecondaryCTA`
+  - `Pricing` (Planos)
+
+### 2. Otimização para Dispositivos Móveis
+- **Ajuste de Dimensões:** Refatoração do objeto `sizes` dentro de `MagneticButton.tsx`.
+  - Redução de padding horizontal (de `px-8` para `px-6` no mobile) e tamanho de fonte (de `text-base` para `text-sm` no tamanho `lg`) para evitar que botões "estourem" a tela em dispositivos menores.
+- **Prevenção de Quebra de Linha:** Adição da classe `whitespace-nowrap` para garantir que textos de CTA (ex: "UNLOCK MEMBER ACCESS") permaneçam em uma única linha.
+
+### 3. Estratégia de Navegação (Links Âncora)
+Implementação de botões de conversão ("Anchor Buttons") ao final de **todas** as seções informativas, direcionando o usuário suavemente para a seção de Preços (`#pricing`).
+- **Seções Atualizadas:**
+  - `Testimonials.tsx`: Adicionado botão "UNLOCK MEMBER ACCESS".
+  - `ComparisonTable.tsx`: Adicionado botão "CHOOSE YOUR PLAN".
+  - `FAQ.tsx`: Adicionado botão "START YOUR TRANSFORMATION".
+  - `FeatureSection.tsx`: Adicionado botão "ACCESS COMPONENT" (Aplicado dinamicamente para Nutrição, Treino e Dashboard).
+  - `QualificationSection.tsx`: Adicionado botão "JOIN THE ELITE - START NOW".
+  - `MechanismSection.tsx`: Adicionado botão "INITIATE PROTOCOL".
+  - `ScannerSection.tsx`: Adicionado botão "ACTIVATE SCANNER".
+  - `ProblemSection.tsx`: Adicionado botão "FIX THE SYSTEM".
+
+### 4. Refatoração de Código
+- **FeatureSection Genérica:** O componente `FeatureSection.tsx` foi reescrito para aceitar props (`title`, `description`, `image`, `align`), substituindo o conteúdo hardcoded anterior. Isso permite reutilização limpa na `LandingPage` para os blocos de Nutrição, Treino e Dashboard.
+- **Correções de Lint:** Resolução de erros de importação e tipagem ao introduzir o componente `Button` nas seções antigas.
+
+### Status Atual
+- A Landing Page agora possui um funil de conversão agressivo e consistente em todas as dobras da página.
+- A experiência móvel está mais polida, sem elementos visuais quebrados nos botões principais.

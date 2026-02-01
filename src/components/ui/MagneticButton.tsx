@@ -35,15 +35,15 @@ export const Button: React.FC<ButtonProps> = ({
     };
 
     const variants = {
-        primary: "text-white shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.8)] border border-white/20 backdrop-blur-md",
+        primary: "text-black font-bold shadow-[0_0_20px_rgba(212,255,0,0.4)] hover:shadow-[0_0_40px_rgba(212,255,0,0.6)] border border-primary/50 backdrop-blur-md",
         secondary: "bg-white text-black hover:bg-gray-200",
         outline: "border border-white/20 hover:bg-white/10 text-white"
     };
 
     const sizes = {
-        sm: "px-4 py-2 text-sm",
-        md: "px-6 py-3 text-base",
-        lg: "px-8 py-4 text-lg"
+        sm: "px-3 py-2 text-xs md:px-4 md:py-2 md:text-sm",
+        md: "px-5 py-3 text-sm md:px-8 md:py-4 md:text-base",
+        lg: "px-6 py-4 text-sm md:px-10 md:py-5 md:text-lg"
     };
 
     return (
@@ -55,7 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
             animate={{ x: position.x * 0.2, y: position.y * 0.2 }}
             transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             className={cn(
-                "relative rounded-full font-semibold transition-all duration-300 overflow-hidden",
+                "relative rounded-full transition-all duration-300 overflow-hidden font-display tracking-wide whitespace-nowrap flex items-center justify-center",
                 variants[variant],
                 sizes[size],
                 className
@@ -65,23 +65,23 @@ export const Button: React.FC<ButtonProps> = ({
             {variant === 'primary' && (
                 <>
                     {/* Liquid Gradient Background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700" />
+                    <div className="absolute inset-0 bg-primary" />
 
                     {/* Noise Texture */}
                     <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay" />
 
                     {/* Moving Shine (Liquid Effect) */}
                     <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -skew-x-12"
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -skew-x-12"
                         animate={{ x: ['-100%', '200%'] }}
                         transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", repeatDelay: 0.5 }}
                     />
 
                     {/* Glass Top Highlight */}
-                    <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent opacity-80" />
+                    <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent opacity-80" />
 
                     {/* Bottom Reflection */}
-                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-50" />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/10 to-transparent opacity-50" />
                 </>
             )}
 
@@ -92,16 +92,16 @@ export const Button: React.FC<ButtonProps> = ({
 
                     {/* Moving Shine (Subtle) */}
                     <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12"
                         animate={{ x: ['-100%', '200%'] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
                     />
 
                     {/* Glass Top Highlight */}
-                    <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent opacity-50" />
+                    <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/5 to-transparent opacity-50" />
                 </>
             )}
-            <span className="relative z-10 flex items-center gap-2">{children}</span>
+            <span className="relative z-10 flex items-center justify-center gap-2 w-full">{children}</span>
         </motion.button>
     );
 };

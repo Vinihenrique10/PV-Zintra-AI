@@ -1,4 +1,6 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Button } from './ui/MagneticButton';
 import { clsx } from 'clsx';
 
 interface FeatureSectionProps {
@@ -8,49 +10,90 @@ interface FeatureSectionProps {
     align?: 'left' | 'right';
 }
 
-export const FeatureSection: React.FC<FeatureSectionProps> = ({
-    title,
-    description,
-    image,
-    align = 'left'
-}) => {
-    return (
-        <section className="py-24 px-6 relative overflow-hidden">
-            <div className="container mx-auto max-w-6xl">
-                <div className={clsx(
-                    "flex flex-col md:flex-row items-center gap-12 md:gap-24",
-                    align === 'right' ? "md:flex-row-reverse" : ""
-                )}>
-                    {/* Text Content */}
-                    <motion.div
-                        initial={{ opacity: 0, x: align === 'left' ? -50 : 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
-                        className="flex-1"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                            {title}
-                        </h2>
-                        <p className="text-lg text-gray-400 leading-relaxed">
-                            {description}
-                        </p>
-                    </motion.div>
+export const FeatureSection = ({ title, description, image, align = 'left' }: FeatureSectionProps) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "end start"]
+    });
 
-                    {/* Visual Content */}
+    const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+    const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
+    const scrollToPricing = () => {
+        const pricingSection = document.getElementById('pricing');
+        if (pricingSection) {
+            pricingSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <section ref={containerRef} className="py-32 px-6 relative overflow-visible">
+            {/* Dynamic Background */}
+            <div className={clsx(
+                "absolute top-0 w-1/2 h-1/2 bg-gradient-to-b from-primary/5 to-transparent blur-[120px] rounded-full pointer-events-none -z-10",
+                align === 'right' ? 'right-0' : 'left-0'
+            )} />
+
+            <div className="container mx-auto max-w-7xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+                    {/* Image / Visual Container */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
-                        className="flex-1 w-full"
+                        style={{ y, opacity }}
+                        className={clsx(
+                            "relative z-10",
+                            align === 'right' ? 'order-2 lg:order-2' : 'order-2 lg:order-1'
+                        )}
                     >
-                        <div className="relative w-full aspect-[4/5] md:aspect-square max-w-[500px] mx-auto flex items-center justify-center">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-full blur-3xl -z-10" />
-                            {/* Inner Content (passed as prop) */}
+                        <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
+
+                            {/* Render passed visual component */}
                             {image}
+
+                            {/* Overlay UI Elements (Optional decorative) */}
+                            <div className="absolute bottom-8 left-8 right-8 z-20 pointer-events-none">
+                                <div className="flex items-center justify-between mb-4">
+                                    <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-xs font-mono text-white">
+                                        SYSTEM STATUS: OPTIMAL
+                                    </div>
+                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_var(--color-primary)]" />
+                                </div>
+                                <div className="h-1 w-full bg-white/20 rounded-full overflow-hidden">
+                                    <div className="h-full bg-primary w-[85%] shadow-[0_0_10px_var(--color-primary)]" />
+                                </div>
+                            </div>
                         </div>
                     </motion.div>
+
+                    {/* Text Content */}
+                    <div className={clsx(
+                        align === 'right' ? 'order-1 lg:order-1' : 'order-1 lg:order-2'
+                    )}>
+                        <motion.div
+                            initial={{ opacity: 0, x: align === 'right' ? -50 : 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2 className="text-display text-5xl md:text-7xl font-bold mb-8 leading-[0.9]">
+                                <span className="block text-white">
+                                    {title}
+                                </span>
+                            </h2>
+                            <p className="text-xl text-gray-400 mb-8 leading-relaxed font-light">
+                                {description}
+                            </p>
+
+                            <div className="mt-8">
+                                <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
+                                    ACCESS COMPONENT
+                                </Button>
+                            </div>
+
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
