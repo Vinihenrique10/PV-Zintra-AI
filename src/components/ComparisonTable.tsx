@@ -64,7 +64,7 @@ export const ComparisonTable = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16 max-w-3xl mx-auto"
                 >
-                    <h2 className="text-display text-4xl md:text-5xl font-bold mb-6">
+                    <h2 className="text-display text-4xl md:text-6xl font-bold mb-6">
                         {t.comparison.title.start}<span className="text-primary">{t.comparison.title.highlight}</span>
                     </h2>
                     <p className="text-lg text-gray-400 mb-8 font-light">
@@ -82,7 +82,7 @@ export const ComparisonTable = () => {
                     <table className="w-full border-separate border-spacing-0 min-w-[800px]">
                         <thead>
                             <tr>
-                                <th className="p-6 text-left text-gray-400 font-medium w-1/4 uppercase tracking-widest text-xs">Features</th>
+                                <th className="p-6 text-left text-gray-400 font-medium w-1/4 uppercase tracking-widest text-xs">{t.comparison.headers.feature}</th>
                                 <th className="p-6 text-center w-1/4 relative">
                                     <div className="absolute top-0 left-0 right-0 h-[2px] bg-primary shadow-[0_0_15px_var(--color-primary)]" />
                                     <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-primary text-black text-[10px] font-bold px-3 py-1 rounded-sm uppercase tracking-wider shadow-[0_0_15px_rgba(212,255,0,0.5)]">
@@ -141,7 +141,7 @@ export const ComparisonTable = () => {
                     </table>
                 </motion.div>
 
-                <div className="mt-16 text-center relative z-20">
+                <div className="mt-16 flex justify-center relative z-20">
                     <Button size="lg" onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}>
                         {t.offer.button}
                     </Button>

@@ -44,7 +44,7 @@ export const ProblemSection = () => {
                         </p>
                     </div>
 
-                    <div>
+                    <div className="flex justify-center lg:justify-start">
                         <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
                             FIX THE SYSTEM
                         </Button>

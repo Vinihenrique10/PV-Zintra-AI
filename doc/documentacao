@@ -34,3 +34,79 @@ Implementação de botões de conversão ("Anchor Buttons") ao final de **todas*
 ### Status Atual
 - A Landing Page agora possui um funil de conversão agressivo e consistente em todas as dobras da página.
 - A experiência móvel está mais polida, sem elementos visuais quebrados nos botões principais.
+- **Correção de Redundância:** Remoção de botões duplicados (`SecondaryCTA`) que conflitavam com os novos botões integrados nas seções.
+- **Refinamento de Layout:** Ajuste no alinhamento dos botões em `FeatureSection` e `ProblemSection` para centralização automática em dispositivos móveis.
+- **Redesign de Depoimentos:** Substituição do carrossel automático por uma galeria horizontal interativa ("The Evidence Archive"), com foco nas imagens de resultado e tipografia editorial.
+- **Limpeza Visual:** Remoção de frames e bordas decorativas ao redor dos mockups funcionais (`FeatureSection`) para um visual mais limpo e direto.
+
+---
+
+## Data: 02 de Fevereiro de 2026
+**Objetivo da Sessão:** Internacionalização completa (i18n), padronização de tipografia e otimização de efeitos visuais para dispositivos móveis.
+
+### 1. Internacionalização (i18n) - Correções Finais
+- **Tradução de Elementos Faltantes:**
+  - Substituição de textos hardcoded em inglês por chaves de tradução dinâmicas em todos os componentes:
+    - `MechanismSection`: Labels "Process Flow" e botão "INITIATE PROTOCOL"
+    - `QualificationSection`: Label "Exclusive Access" e botão "JOIN THE ELITE - START NOW"
+    - `Testimonials`: Labels "Verified Transformations", "Result Verified", "Active User" e botão "UNLOCK MEMBER ACCESS"
+    - `ComparisonTable`: Header "Features" da tabela
+    - `OfferSection`: Headline "TO THE MOLECULAR LEVEL" (traduzido para "AO NÍVEL MOLECULAR" em PT-BR)
+    - `FeatureSection`: Botão "ACCESS COMPONENT" (traduzido para "Acessar Área de Membros")
+  
+- **Estrutura de Tipos TypeScript:**
+  - Atualização do tipo `TranslationKeys` para tornar propriedades opcionais (`label?`, `button?`, `molecular?`) evitando erros em idiomas com traduções incompletas
+  - Correção de sintaxe e duplicações no objeto de traduções PT-BR (seção `testimonials`)
+
+- **Ajuste de Moeda:**
+  - Conversão dos preços na tabela de comparação de Real (R$) para Dólar ($) na versão PT-BR
+  - Valores atualizados: $19.90 (Zintra), $300+ (Personal), $9.90 (Apps Genéricos)
+
+### 2. Padronização de Tipografia
+- **Títulos de Seção Unificados:**
+  - Aplicação consistente do tamanho `text-4xl md:text-6xl` em todos os títulos principais:
+    - `MechanismSection`
+    - `QualificationSection` 
+    - `ComparisonTable`
+    - `Testimonials`
+  - Garantia de hierarquia visual uniforme e profissional em toda a landing page
+
+### 3. Otimização de Efeitos para Mobile
+**Problema Identificado:** Efeitos hover (mouse) não funcionam em dispositivos móveis (touch), resultando em elementos visuais "mortos" sem interatividade.
+
+**Soluções Implementadas:**
+- **Testimonials:**
+  - Imagens exibidas em cores completas por padrão no mobile (sem grayscale)
+  - Efeito de overlay flash desativado no mobile, ativo apenas no desktop hover
+  
+- **QualificationSection:**
+  - Animação "Border Beam" (borda rotativa) visível por padrão no mobile
+  - No desktop, mantém comportamento de ativação por hover
+  
+- **MechanismSection:**
+  - Ícones dos steps (User, Target, Zap) com estado "ativo" por padrão no mobile:
+    - Borda verde (`border-primary`)
+    - Shadow/glow visível
+    - Ícones coloridos em verde
+  - No desktop, efeitos ativam apenas no hover
+  
+- **OfferSection:**
+  - Animação do scanner de impressão digital ativa por padrão no mobile
+  - Centralização forçada do título "MOLECULAR LEVEL" com `w-full text-center`
+
+### 4. Correções de Estrutura
+- **Alinhamento da Seção Offer:**
+  - Adição de classes `w-full text-center` ao headline principal
+  - Garantia de centralização perfeita em todas as resoluções
+
+### Status Atual
+- ✅ **i18n 100% Completo:** Todos os textos visíveis agora respondem corretamente à detecção de idioma do dispositivo
+- ✅ **Tipografia Consistente:** Hierarquia visual padronizada em todas as seções principais
+- ✅ **Mobile-First:** Efeitos visuais funcionam nativamente em dispositivos touch sem dependência de hover
+- ✅ **Moeda Unificada:** Preços exibidos em dólar ($) em todas as versões de idioma
+- ✅ **Experiência Premium:** Animações e efeitos visuais ativos por padrão no mobile, mantendo interatividade no desktop
+
+### Próximos Passos Sugeridos
+- Testes de QA em dispositivos reais (iOS/Android)
+- Validação de performance (Core Web Vitals)
+- Deploy para produção

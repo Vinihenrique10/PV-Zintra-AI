@@ -46,6 +46,8 @@ export type TranslationKeys = {
             saladInfo: string;
             tapToScan: string;
         };
+        label?: string;
+        button?: string;
     };
     problem: {
         title: {
@@ -56,6 +58,12 @@ export type TranslationKeys = {
         description1: string;
         solutionBadge: string;
         description2: string;
+        label?: string;
+        button?: string;
+        visual?: {
+            inefficiency: string;
+            genericFailure: string;
+        };
     };
     mechanism: {
         header: {
@@ -79,6 +87,8 @@ export type TranslationKeys = {
                 description: string;
             };
         };
+        label?: string;
+        button?: string;
     };
     features: {
         nutrition: {
@@ -130,6 +140,9 @@ export type TranslationKeys = {
             };
         };
     };
+    common?: {
+        accessComponent: string;
+    };
     cta: {
         secondary1: string;
         secondary2: string;
@@ -141,6 +154,8 @@ export type TranslationKeys = {
             end: string;
         };
         subtitle: string;
+        label?: string;
+        button?: string;
         items: string[];
     };
     testimonials: {
@@ -152,10 +167,20 @@ export type TranslationKeys = {
             quote: string;
             name: string;
             designation: string;
+            result?: string;
         }[];
+        label?: string;
+        badge?: string;
+        status?: string;
+        button?: string;
     };
     offer: {
         title: {
+            start: string;
+            highlight: string;
+            end: string;
+        };
+        molecular?: {
             start: string;
             highlight: string;
             end: string;
@@ -174,6 +199,7 @@ export type TranslationKeys = {
             recommended: string;
             personal: string;
             generic: string;
+            feature?: string;
         };
         rows: {
             investment: {
@@ -283,6 +309,8 @@ export const translations: Record<Language, TranslationKeys> = {
                 saladInfo: "120g • 180 kcal",
                 tapToScan: "Tap to Scan",
             },
+            label: "AI Vision Technology",
+            button: "ACTIVATE SCANNER",
         },
         problem: {
             title: {
@@ -293,6 +321,12 @@ export const translations: Record<Language, TranslationKeys> = {
             description1: "Because they don't know you. Generic apps and internet PDFs treat everyone as a statistic. They ignore that you have knee pain, hate broccoli, or that your metabolism is different.",
             solutionBadge: "The Zintra Solution:",
             description2: " We don't \"guess\" numbers. Our Artificial Intelligence analyzes dozens of variables from your profile to create the shortest and efficient path between you and your goal.",
+            label: "System Failure",
+            button: "FIX THE SYSTEM",
+            visual: {
+                inefficiency: "Chronic Inefficiency",
+                genericFailure: "Generic diets fail in 92% of cases.",
+            }
         },
         mechanism: {
             header: {
@@ -316,6 +350,8 @@ export const translations: Record<Language, TranslationKeys> = {
                     description: "We generate a unique protocol. If you change your mind or routine, the plan changes with you.",
                 },
             },
+            label: "Process Flow",
+            button: "INITIATE PROTOCOL",
         },
         features: {
             nutrition: {
@@ -367,6 +403,9 @@ export const translations: Record<Language, TranslationKeys> = {
                 },
             },
         },
+        common: {
+            accessComponent: "Access Member Area",
+        },
         cta: {
             secondary1: "I want to lose weight eating what I love",
             secondary2: "I want my safe and personalized workout",
@@ -378,6 +417,8 @@ export const translations: Record<Language, TranslationKeys> = {
                 end: " For?",
             },
             subtitle: "This app was made for you if you:",
+            label: "Exclusive Access",
+            button: "JOIN THE ELITE - START NOW",
             items: [
                 "Want to lose weight, but won't give up eating delicious food.",
                 "Have a busy routine and little time to plan meals.",
@@ -395,34 +436,48 @@ export const translations: Record<Language, TranslationKeys> = {
                     quote: "I used to think I was eating right, but my belly never went away, so frustrating! When I downloaded Zintra, I saw I was making big mistakes with my food distribution. I'm very visual, so waking up and seeing 'Today's Tasks' there to check off ✅ helped me a lot with discipline. It was that daily control that made the magic happen and I finally got defined abs.",
                     name: "Mariana, 24",
                     designation: "University Student",
+                    result: "Lost 8kg",
                 },
                 {
                     quote: "Honestly, I look at the before photo and don't even recognize myself. I was so tired, had tried all those crazy diets and always gained double the weight back. Zintra was different because it asked everything about my life during signup. And what kept me going was seeing the 'Daily Motivation' and watching my streak flame grow. It was amazing, I lost a lot of weight and this time it was for real.",
                     name: "Carla, 32",
                     designation: "Sales Representative",
+                    result: "Defined Abs",
                 },
                 {
                     quote: "Seriously... I was desperate because my wedding dress wasn't closing and I only had a few months left. The 'Scientific Consultation' it generates at the start is actually real, it calculated exactly. I became obsessed with the Nutritional Summary trying to hit my targets perfectly. Oh, and having to 'fill the water glass' in the app helped me so much with bloating. I fit into the dress and felt amazing.",
                     name: "Fernanda, 29",
                     designation: "Architect (Bride)",
+                    result: "Wedding Ready",
                 },
                 {
                     quote: "With my hectic work schedule and taking care of the house, I had no time to weigh food. The game changer for me was that 'Analyze Meal' button. I'm at a restaurant, take a photo of the plate and the app already tells me if it fits my plan. This made my life so much easier! Highly recommend for anyone with a crazy life.",
                     name: "Patricia, 35",
                     designation: "Project Manager",
+                    result: "Efficiency",
                 },
                 {
                     quote: "Amazing. I thought I was training seriously, but Zintra's workout plan showed me what real training looks like, with the right weights and reps for me. Besides the diet, seeing the Weight Graph line going down every week on the dashboard is addicting and kept me focused.",
                     name: "Bruna, 27",
                     designation: "Designer (NY)",
+                    result: "Muscle Gain",
                 },
             ],
+            label: "Verified Transformations",
+            badge: "Result Verified",
+            status: "Active User",
+            button: "UNLOCK MEMBER ACCESS",
         },
         offer: {
             title: {
                 start: "Your body's science, ",
                 highlight: "decoded",
                 end: ".",
+            },
+            molecular: {
+                start: "TO THE",
+                highlight: "MOLECULAR",
+                end: "LEVEL",
             },
             subtitle: "Don't waste more time with trial and error. Start today with a plan that was tailor-made for you.",
             button: "Start Now",
@@ -438,6 +493,7 @@ export const translations: Record<Language, TranslationKeys> = {
                 recommended: "RECOMMENDED",
                 personal: "Personal Trainer + Nutritionist",
                 generic: "Generic Apps / YouTube",
+                feature: "Features",
             },
             rows: {
                 investment: {
@@ -569,6 +625,8 @@ export const translations: Record<Language, TranslationKeys> = {
                 saladInfo: "120g • 180 kcal",
                 tapToScan: "Toque para Escanear",
             },
+            label: "Tecnologia de Visão IA",
+            button: "ATIVAR SCANNER",
         },
         problem: {
             title: {
@@ -579,6 +637,12 @@ export const translations: Record<Language, TranslationKeys> = {
             description1: "Porque elas não te conhecem. Apps genéricos e PDFs de internet tratam todo mundo como estatística. Eles ignoram que você tem dor no joelho, odeia brócolis ou que seu metabolismo é diferente.",
             solutionBadge: "A Solução Zintra:",
             description2: " Nós não \"chutamos\" números. Nossa Inteligência Artificial analisa dezenas de variáveis do seu perfil para criar o caminho mais curto e eficiente entre você e seu objetivo.",
+            label: "Falha no Sistema",
+            button: "CORRIGIR O SISTEMA",
+            visual: {
+                inefficiency: "Ineficiência Crônica",
+                genericFailure: "Dietas genéricas falham em 92% dos casos.",
+            }
         },
         mechanism: {
             header: {
@@ -602,6 +666,8 @@ export const translations: Record<Language, TranslationKeys> = {
                     description: "Geramos um protocolo único. Se você muda de ideia ou rotina, o plano muda com você.",
                 },
             },
+            label: "Fluxo do Processo",
+            button: "INICIAR PROTOCOLO",
         },
         features: {
             nutrition: {
@@ -653,6 +719,9 @@ export const translations: Record<Language, TranslationKeys> = {
                 },
             },
         },
+        common: {
+            accessComponent: "Acessar Área de Membros",
+        },
         cta: {
             secondary1: "Quero emagrecer comendo o que gosto",
             secondary2: "Quero meu treino seguro e personalizado",
@@ -664,6 +733,8 @@ export const translations: Record<Language, TranslationKeys> = {
                 end: "?",
             },
             subtitle: "Este app foi feito para você se:",
+            label: "Acesso Exclusivo",
+            button: "ENTRAR NA ELITE - COMEÇAR AGORA",
             items: [
                 "Quer emagrecer, mas não abre mão de comer coisas gostosas.",
                 "Tem rotina corrida e pouco tempo para planejar refeições.",
@@ -681,34 +752,48 @@ export const translations: Record<Language, TranslationKeys> = {
                     quote: "Eu achava que comia certo, mas a barriga nunca sumia, que ódio! Quando baixei o Zintra, vi que eu errava feio na distribuição. Sou muito visual, então acordar e ver as 'Tarefas de Hoje' ali pra dar o check ✅ me ajudou muito na disciplina. Foi esse controle diário que fez a mágica e finalmente trinquei o abdômen.",
                     name: "Mariana, 24",
                     designation: "Estudante Universitária",
+                    result: "Perdeu 8kg",
                 },
                 {
                     quote: "Namoral... eu olho a foto de antes e nem me reconheço. Eu tava muito cansada, já tinha feito essas dietas malucas e sempre ganhava o dobro. O Zintra foi diferente porque perguntou tudo da minha vida no cadastro. E o que me segurou foi ver a 'Motivação Diária' e ver meu foguinho de ofensiva crescer. Foi top, perdi muito peso e dessa vez foi real.",
                     name: "Carla, 32",
                     designation: "Representante Comercial",
+                    result: "Definiu Abdômen",
                 },
                 {
                     quote: "Sério... eu tava desesperada porque meu vestido de noiva não fechava e faltavam poucos meses. A 'Consultoria Científica' que ele gera no começo é real mesmo, calculou certinho. Fiquei obcecada pelo Resumo Nutricional tentando bater as metas perfeitinho. Ah, e ter que 'encher o copo' de água no app me ajudou muito no inchaço. Entrei no vestido e me senti maravilhosa.",
                     name: "Fernanda, 29",
                     designation: "Arquiteta (Noiva)",
+                    result: "Pronta p/ Casamento",
                 },
                 {
                     quote: "Com a correria do escritório e cuidando da casa, eu não tinha tempo de pesar comida. O 'pulo do gato' pra mim foi esse botão de 'Analisar Refeição'. Tô no restaurante, tiro foto do prato e o app já me fala se cabe no plano. Isso facilitou demais minha vida! Indico muito pra quem tem vida doida.",
                     name: "Patrícia, 35",
                     designation: "Gerente de Projetos",
+                    result: "Eficiência",
                 },
                 {
                     quote: "Surreal. Eu achava que treinava pesado, mas o treino do Zintra me mostrou o que é treino de verdade, com as cargas e repetições certas pra mim. Fora a dieta, ver a linha do Gráfico de Peso descendo toda semana no dashboard vicia e me manteve focada.",
                     name: "Bruna, 27",
                     designation: "Designer (NY)",
+                    result: "Ganho Massa",
                 },
             ],
+            label: "Transformações Verificadas",
+            badge: "Resultado Verificado",
+            status: "Usuário Ativo",
+            button: "DESBLOQUEAR ACESSO",
         },
         offer: {
             title: {
                 start: "A ciência do seu corpo, ",
                 highlight: "decodificada",
                 end: ".",
+            },
+            molecular: {
+                start: "AO NÍVEL",
+                highlight: "MOLECULAR",
+                end: "",
             },
             subtitle: "Não perca mais tempo com tentativa e erro. Comece hoje com um plano que foi feito sob medida para você.",
             button: "Começar Agora",
@@ -724,13 +809,14 @@ export const translations: Record<Language, TranslationKeys> = {
                 recommended: "RECOMENDADO",
                 personal: "Personal + Nutri",
                 generic: "Apps Genéricos / YouTube",
+                feature: "Funcionalidades",
             },
             rows: {
                 investment: {
                     feature: "Investimento Mensal",
-                    zintra: { text: "R$ 19,90", sub: "(Acessível)" },
-                    personal: "R$ 300+",
-                    generic: "R$ 9,90",
+                    zintra: { text: "$19.90", sub: "(Acessível)" },
+                    personal: "$300+",
+                    generic: "$9.90",
                 },
                 injuries: {
                     feature: "Considera dores/lesões?",

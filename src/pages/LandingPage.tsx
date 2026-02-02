@@ -16,7 +16,6 @@ const Testimonials = lazy(() => import('../components/Testimonials').then(module
 const ComparisonTable = lazy(() => import('../components/ComparisonTable').then(module => ({ default: module.ComparisonTable })));
 const PricingBasic = lazy(() => import('../components/PricingBasic').then(module => ({ default: module.PricingBasic })));
 const FAQ = lazy(() => import('../components/FAQ').then(module => ({ default: module.FAQ })));
-const SecondaryCTA = lazy(() => import('../components/SecondaryCTA').then(module => ({ default: module.SecondaryCTA })));
 const MechanismSection = lazy(() => import('../components/MechanismSection').then(module => ({ default: module.MechanismSection })));
 const QualificationSection = lazy(() => import('../components/QualificationSection').then(module => ({ default: module.QualificationSection })));
 const OfferSection = lazy(() => import('../components/OfferSection').then(module => ({ default: module.OfferSection })));
@@ -54,8 +53,6 @@ export function LandingPage() {
                     {/* Feature B: AI Scanner */}
                     <ScannerSection />
 
-                    <SecondaryCTA text={t.cta.secondary1} />
-
                     {/* Feature C: Workout Plan */}
                     <FeatureSection
                         title={t.features.workout.title}
@@ -64,7 +61,7 @@ export function LandingPage() {
                         align="left"
                     />
 
-                    <SecondaryCTA text={t.cta.secondary2} />
+
 
                     {/* Feature D: Dashboard */}
                     <FeatureSection

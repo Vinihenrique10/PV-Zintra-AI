@@ -82,7 +82,7 @@ export const FAQ = () => {
                     ))}
                 </div>
 
-                <div className="mt-16 text-center">
+                <div className="mt-16 flex justify-center">
                     <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
                         START YOUR TRANSFORMATION
                     </Button>

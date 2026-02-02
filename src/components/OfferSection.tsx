@@ -35,7 +35,7 @@ export const OfferSection = () => {
                     <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full animate-pulse" />
                     <div className="w-24 h-24 rounded-full border border-primary/30 flex items-center justify-center bg-black/50 backdrop-blur-xl relative overflow-hidden group">
                         <Fingerprint className="w-12 h-12 text-primary relative z-10" />
-                        <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                        <div className="absolute inset-0 bg-primary/10 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500" />
                     </div>
                 </motion.div>
 
@@ -45,8 +45,8 @@ export const OfferSection = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-display text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tighter">
-                        TO THE <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">MOLECULAR</span> LEVEL
+                    <h2 className="text-display text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-[0.9] tracking-tighter w-full text-center">
+                        {t.offer.molecular?.start} <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500">{t.offer.molecular?.highlight}</span> {t.offer.molecular?.end}
                     </h2>
 
                     <div className="h-px w-32 bg-primary mx-auto mb-10 shadow-[0_0_15px_var(--color-primary)]" />

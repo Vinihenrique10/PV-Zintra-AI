@@ -43,8 +43,8 @@ export const MechanismSection = () => {
                     viewport={{ once: true }}
                     className="text-center mb-24"
                 >
-                    <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">Process Flow</span>
-                    <h2 className="text-display text-4xl md:text-5xl font-bold mb-6">
+                    <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">{t.mechanism.label}</span>
+                    <h2 className="text-display text-4xl md:text-6xl font-bold mb-6">
                         {t.mechanism.header.title.start}<span className="text-primary">{t.mechanism.header.title.highlight}</span>
                     </h2>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto">
@@ -68,10 +68,10 @@ export const MechanismSection = () => {
                                 className="relative flex flex-col items-center text-center group"
                             >
                                 {/* Node */}
-                                <div className="w-20 h-20 rounded-full bg-[#050505] border-2 border-primary/20 group-hover:border-primary group-hover:shadow-[0_0_30px_-5px_var(--color-primary)] transition-all duration-500 flex items-center justify-center relative z-10 mb-8">
-                                    <step.icon size={32} className="text-white group-hover:text-primary transition-colors" />
+                                <div className="w-20 h-20 rounded-full bg-[#050505] border-2 border-primary md:border-primary/20 md:group-hover:border-primary shadow-[0_0_30px_-5px_var(--color-primary)] md:shadow-none md:group-hover:shadow-[0_0_30px_-5px_var(--color-primary)] transition-all duration-500 flex items-center justify-center relative z-10 mb-8">
+                                    <step.icon size={32} className="text-primary md:text-white md:group-hover:text-primary transition-colors" />
                                     {/* Pulse Effect */}
-                                    <div className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:animate-ping" />
+                                    <div className="absolute inset-0 rounded-full bg-primary/20 opacity-0 md:group-hover:animate-ping" />
                                 </div>
 
                                 {/* Content */}
@@ -94,9 +94,9 @@ export const MechanismSection = () => {
                         ))}
                     </div>
 
-                    <div className="mt-20 text-center">
+                    <div className="mt-20 flex justify-center">
                         <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
-                            INITIATE PROTOCOL
+                            {t.mechanism.button}
                         </Button>
                     </div>
 

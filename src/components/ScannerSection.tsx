@@ -51,7 +51,7 @@ export const ScannerSection = () => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-primary/10 blur-[100px] -z-10 rounded-full opacity-60 pointer-events-none" />
                 </div>
 
-                <div className="text-center">
+                <div className="flex justify-center">
                     <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
                         ACTIVATE SCANNER
                     </Button>

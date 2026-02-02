@@ -24,7 +24,7 @@ export const QualificationSection = () => {
                     className="relative rounded-3xl p-[1px] overflow-hidden group"
                 >
                     {/* Border Beam Animation */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ backgroundSize: '200% 200%' }} />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-[spin_4s_linear_infinite] opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-700" style={{ backgroundSize: '200% 200%' }} />
                     <div className="absolute inset-0 border border-white/10 rounded-3xl" />
 
                     <div className="bg-[#080808]/90 backdrop-blur-3xl rounded-3xl p-8 md:p-16 relative overflow-hidden h-full">
@@ -34,9 +34,9 @@ export const QualificationSection = () => {
                         <div className="text-center mb-16 relative z-10">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-400 mb-6 uppercase tracking-widest">
                                 <ShieldCheck size={14} className="text-primary" />
-                                Exclusive Access
+                                {t.qualification.label}
                             </div>
-                            <h2 className="text-display text-3xl md:text-5xl font-bold mb-6">
+                            <h2 className="text-display text-3xl md:text-6xl font-bold mb-6">
                                 {t.qualification.title.start}<span className="text-primary">{t.qualification.title.highlight}</span>{t.qualification.title.end}
                             </h2>
                             <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
@@ -63,9 +63,9 @@ export const QualificationSection = () => {
                             ))}
                         </div>
 
-                        <div className="mt-16 text-center relative z-20">
+                        <div className="mt-16 flex justify-center relative z-20">
                             <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
-                                JOIN THE ELITE - START NOW
+                                {t.qualification.button}
                             </Button>
                         </div>
 

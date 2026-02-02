@@ -1,68 +1,57 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ArrowRight, ArrowLeft } from 'lucide-react';
 import { Button } from './ui/MagneticButton';
-
-// Infinite Scroll Helper
-const Marquee = ({ children, direction = "left", speed = 20 }: { children: React.ReactNode, direction?: "left" | "right", speed?: number }) => {
-    return (
-        <div className="flex overflow-hidden relative w-full group">
-            <motion.div
-                className="flex gap-8 whitespace-nowrap"
-                animate={{
-                    x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-                }}
-                transition={{
-                    duration: speed,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-            >
-                {children}
-                {children} {/* Duplicate for seamless loop */}
-            </motion.div>
-            {/* Gradient Masks */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-            <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
-        </div>
-    );
-};
 
 export const Testimonials = () => {
     const { t } = useLanguage();
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     const testimonials = [
         {
             quote: t.testimonials.items[0].quote,
             name: t.testimonials.items[0].name,
             designation: t.testimonials.items[0].designation,
-            src: "/depoimentos/dep01.jpg"
+            src: "/depoimentos/dep01.jpg",
+            result: "Lost 8kg" // Hardcoded emphasis for design (could be dynamic later)
         },
         {
             quote: t.testimonials.items[1].quote,
             name: t.testimonials.items[1].name,
             designation: t.testimonials.items[1].designation,
-            src: "/depoimentos/dep02.jpg"
+            src: "/depoimentos/dep02.jpg",
+            result: "Defined Abs"
         },
         {
             quote: t.testimonials.items[2].quote,
             name: t.testimonials.items[2].name,
             designation: t.testimonials.items[2].designation,
-            src: "/depoimentos/dep03.jpg"
+            src: "/depoimentos/dep03.jpg",
+            result: "Wedding Ready"
         },
         {
             quote: t.testimonials.items[3].quote,
             name: t.testimonials.items[3].name,
             designation: t.testimonials.items[3].designation,
-            src: "/depoimentos/dep04.jpg"
+            src: "/depoimentos/dep04.jpg",
+            result: "Efficiency"
         },
         {
             quote: t.testimonials.items[4].quote,
             name: t.testimonials.items[4].name,
             designation: t.testimonials.items[4].designation,
-            src: "/depoimentos/dep05.png"
+            src: "/depoimentos/dep05.png",
+            result: "Muscle Gain"
         }
     ];
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = direction === 'left' ? -400 : 400;
+            scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    };
 
     const scrollToPricing = () => {
         const pricingSection = document.getElementById('pricing');
@@ -72,95 +61,117 @@ export const Testimonials = () => {
     };
 
     return (
-        <section className="py-32 px-0 relative overflow-hidden bg-black border-y border-white/5">
-            {/* Ambient Background */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-40" />
+        <section className="py-32 px-0 relative bg-[#050505] overflow-hidden border-t border-white/5">
 
-            <div className="container mx-auto max-w-7xl relative z-10 mb-20 px-6 text-center">
+            {/* Ambient Background - Subtle Green Glow */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none opacity-50" />
+
+            <div className="container mx-auto max-w-7xl px-6 mb-16 relative z-10 flex flex-col md:flex-row items-end justify-between gap-8">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
+                    className="max-w-2xl"
                 >
-                    <div className="inline-flex items-center gap-2 text-primary font-mono text-xs tracking-widest uppercase mb-4 opacity-70">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-mono uppercase tracking-widest mb-6">
                         <Star size={12} className="fill-primary" />
-                        <span>Validated Results</span>
-                        <Star size={12} className="fill-primary" />
+                        {t.testimonials.label}
                     </div>
-
-                    <h2 className="text-display text-4xl md:text-7xl font-bold mb-6">
-                        <span className="text-white">BIO-DATA</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white font-light italic">CONFIRMED</span>
+                    <h2 className="text-display text-4xl md:text-6xl font-bold leading-tight text-white mb-2">
+                        {t.testimonials.title.highlight} <span className="text-gray-500 italic font-light">{t.testimonials.title.end}</span>
                     </h2>
                 </motion.div>
+
+                {/* Navigation Buttons */}
+                <div className="flex gap-4">
+                    <button
+                        onClick={() => scroll('left')}
+                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 active:scale-95 group"
+                    >
+                        <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                        onClick={() => scroll('right')}
+                        className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 active:scale-95 group"
+                    >
+                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                    </button>
+                </div>
             </div>
 
-            {/* Marquee Row 1 */}
-            <div className="mb-8">
-                <Marquee speed={40}>
-                    {testimonials.map((item, i) => (
-                        <div key={i} className="w-[400px] h-[220px] bg-[#050505] border border-white/10 p-8 rounded-sm relative flex flex-col justify-between group hover:border-primary/50 transition-colors mx-4">
-                            {/* Decorative Corner */}
-                            <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-white/20 group-hover:border-primary transition-colors" />
+            {/* Scroll Container */}
+            <div
+                ref={scrollContainerRef}
+                className="flex overflow-x-auto gap-6 px-6 pb-12 snap-x snap-mandatory hide-scrollbar"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+                {testimonials.map((item, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1, duration: 0.5 }}
+                        className="min-w-[85vw] md:min-w-[900px] bg-[#0A0A0A] border border-white/10 rounded-sm overflow-hidden flex flex-col md:flex-row snap-center group relative hover:border-primary/30 transition-colors duration-500"
+                    >
+                        {/* Image Section (Expanded to 50% for better Before/After visibility) */}
+                        <div className="w-full md:w-1/2 h-[300px] md:h-auto min-h-[400px] relative overflow-hidden bg-gray-900 ml-0 shrink-0">
+                            <img
+                                src={item.src}
+                                alt={item.name}
+                                className="w-full h-full object-cover object-top grayscale-0 md:grayscale md:group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                            />
 
-                            <Quote className="text-primary/20 w-8 h-8 mb-4 group-hover:text-primary transition-colors" />
+                            {/* Overlay Badge */}
+                            <div className="absolute top-6 left-6 bg-black/80 backdrop-blur-md border border-primary/30 px-4 py-1.5 text-primary text-sm font-bold uppercase tracking-wider">
+                                {t.testimonials.badge}
+                            </div>
 
-                            <p className="text-gray-300 text-lg leading-snug font-light mb-4 line-clamp-3">
-                                "{item.quote}"
-                            </p>
+                            {/* Flash Overlay on Hover */}
+                            <div className="absolute inset-0 bg-primary/20 opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 mix-blend-overlay pointer-events-none" />
+                        </div>
 
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20 grayscale group-hover:grayscale-0 transition-all">
-                                    <img src={item.src} alt={item.name} className="w-full h-full object-cover" />
+                        {/* Content Section */}
+                        <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-between relative">
+                            {/* Watermark Quote */}
+                            <Quote className="absolute top-6 right-8 text-white/5 w-20 h-20 rotate-180 pointer-events-none" />
+
+                            <div>
+                                <div className="flex items-center gap-1 mb-6">
+                                    {[...Array(5)].map((_, starIndex) => (
+                                        <Star key={starIndex} size={14} className="fill-primary text-primary" />
+                                    ))}
                                 </div>
+
+                                <blockquote className="text-xl md:text-2xl text-gray-200 font-light leading-snug mb-8 relative z-10">
+                                    "{item.quote}"
+                                </blockquote>
+                            </div>
+
+                            <div className="flex items-end justify-between border-t border-white/5 pt-6 mt-auto">
                                 <div>
-                                    <div className="text-white font-bold text-sm tracking-wide uppercase">{item.name}</div>
-                                    <div className="text-primary/60 text-xs font-mono">{item.designation}</div>
+                                    <h4 className="text-white font-bold text-lg uppercase tracking-wide">{item.name}</h4>
+                                    <p className="text-gray-500 text-sm font-mono">{item.designation}</p>
+                                </div>
+                                <div className="text-right">
+                                    <span className="block text-[10px] text-gray-600 uppercase tracking-widest mb-1">Status</span>
+                                    <span className="text-primary text-sm font-bold flex items-center gap-1">
+                                        {t.testimonials.status} <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                                    </span>
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </Marquee>
-            </div>
-
-            {/* Marquee Row 2 (Reverse) */}
-            <div>
-                <Marquee direction="right" speed={50}>
-                    {testimonials.map((item, i) => (
-                        <div key={`${i}-rev`} className="w-[400px] h-[220px] bg-[#050505] border border-white/10 p-8 rounded-sm relative flex flex-col justify-between group hover:border-primary/50 transition-colors mx-4 opacity-70 hover:opacity-100">
-                            {/* Decorative Corner */}
-                            <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-white/20 group-hover:border-primary transition-colors" />
-
-                            <Quote className="text-primary/20 w-8 h-8 mb-4 group-hover:text-primary transition-colors" />
-
-                            <p className="text-gray-300 text-lg leading-snug font-light mb-4 line-clamp-3">
-                                "{item.quote}"
-                            </p>
-
-                            <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-full overflow-hidden border border-white/20 grayscale group-hover:grayscale-0 transition-all">
-                                    <img src={item.src} alt={item.name} className="w-full h-full object-cover" />
-                                </div>
-                                <div>
-                                    <div className="text-white font-bold text-sm tracking-wide uppercase">{item.name}</div>
-                                    <div className="text-primary/60 text-xs font-mono">{item.designation}</div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </Marquee>
-            </div>
-
-            <div className="mt-16 text-center relative z-20">
-                <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)] text-black">
-                    UNLOCK MEMBER ACCESS
-                </Button>
-            </div>
-
-            {/* Visual Footer for Section */}
-            <div className="mt-12 flex justify-center gap-1 opacity-20">
-                {[...Array(20)].map((_, i) => (
-                    <div key={i} className="w-1 h-4 bg-primary rounded-full" />
+                    </motion.div>
                 ))}
+
+                {/* Spacer at end */}
+                <div className="min-w-[50px] md:min-w-[200px]" />
+            </div>
+
+            <div className="mt-8 flex justify-center relative z-20">
+                <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)] text-black">
+                    {t.testimonials.button}
+                </Button>
             </div>
 
         </section>

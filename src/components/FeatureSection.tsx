@@ -10,7 +10,10 @@ interface FeatureSectionProps {
     align?: 'left' | 'right';
 }
 
+import { useLanguage } from '../contexts/LanguageContext';
+
 export const FeatureSection = ({ title, description, image, align = 'left' }: FeatureSectionProps) => {
+    const { t } = useLanguage();
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -46,24 +49,9 @@ export const FeatureSection = ({ title, description, image, align = 'left' }: Fe
                             align === 'right' ? 'order-2 lg:order-2' : 'order-2 lg:order-1'
                         )}
                     >
-                        <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
-
-                            {/* Render passed visual component */}
+                        <div className="relative">
+                            {/* Render visual component directly without frame */}
                             {image}
-
-                            {/* Overlay UI Elements (Optional decorative) */}
-                            <div className="absolute bottom-8 left-8 right-8 z-20 pointer-events-none">
-                                <div className="flex items-center justify-between mb-4">
-                                    <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-xs font-mono text-white">
-                                        SYSTEM STATUS: OPTIMAL
-                                    </div>
-                                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_var(--color-primary)]" />
-                                </div>
-                                <div className="h-1 w-full bg-white/20 rounded-full overflow-hidden">
-                                    <div className="h-full bg-primary w-[85%] shadow-[0_0_10px_var(--color-primary)]" />
-                                </div>
-                            </div>
                         </div>
                     </motion.div>
 
@@ -86,9 +74,9 @@ export const FeatureSection = ({ title, description, image, align = 'left' }: Fe
                                 {description}
                             </p>
 
-                            <div className="mt-8">
+                            <div className="mt-8 flex justify-center lg:justify-start">
                                 <Button size="lg" onClick={scrollToPricing} className="shadow-[0_0_30px_rgba(212,255,0,0.2)]">
-                                    ACCESS COMPONENT
+                                    {t.common?.accessComponent}
                                 </Button>
                             </div>
 
